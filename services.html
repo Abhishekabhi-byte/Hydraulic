@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+</head>
+<body>
+      
+        <!-- header start -->
+    <style>
+
+/* HEADER TOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+    align-items: center;
+}
+
+
+.header-translate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 18px 5%;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-logo img {
+   height: 61px;
+    width: 190px;
+    transition: 0.3s;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline effect */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: 0.3s;
+}
+
+.nav-item a:hover::after {
+    width: 65%;
+}
+
+/* ACTIVE */
+.active {
+    font-weight: 600;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* DROPDOWN */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 900px) {
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 999px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 60px 20px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.menu-open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: none;
+        box-shadow: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+/* BACKDROP */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+</style>
+
+
+<div class="main-wrapper">
+
+<!-- HEADER -->
+<div class="header-top">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="navbar-logo">
+        <img src="hydraulic-logo.jpeg">
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item"><a href="index.html">Home</a></li>
+
+        <li class="nav-item"><a href="about-us.html">About Us</a></li>
+
+        <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
+
+          <li class="nav-item has-dropdown">
+            <a href="products.html">Products</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Products1</a></li>
+                <li><a href="#">Products2</a></li>
+                 <li><a href="#">Products3</a></li>
+                <li><a href="#">Products4</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item has-dropdown">
+            <a href="services.html" class="active" style="color: #0094ff;">Services</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Services1</a></li>
+                <li><a href="#">Services2</a></li>
+                 <li><a href="#">Services3</a></li>
+                <li><a href="#">Services4</a></li>
+            </ul>
+        </li>
+
+           <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
+
+        <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const backdrop = document.getElementById("backdrop");
+
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("menu-open");
+    backdrop.classList.toggle("show");
+    document.body.classList.toggle("no-scroll");
+});
+
+backdrop.addEventListener("click", () => {
+    navMenu.classList.remove("menu-open");
+    backdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+});
+
+/* DROPDOWN */
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", function () {
+        this.parentElement.classList.toggle("open");
+    });
+});
+
+</script>
+
+</div>
+
+  <!-- header end -->
+
+
+  
+<!-- /start banner -->
+<div class="fables-modern-hero py-5" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url(https://aawasbuilding.com/demo/ship-management/assets/custom/images/img/banner-ship.jpg) no-repeat center center / cover;">
+   
+        <div class="about-headder">
+            <h1 class="text-white font-weight-bold mb-2"> OUR SERVICES</h1>
+        </div>
+               
+  
+</div>
+
+<style>
+    .fables-modern-hero {
+        color: white;
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+    }
+ 
+    
+</style>
+
+     <!-- /End banner -->
+</body>
+</html>

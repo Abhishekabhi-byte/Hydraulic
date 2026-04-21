@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product1</title>
+</head>
+<body>
+    
+  <!-- header start -->
+    <style>
+
+/* HEADER TOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+    align-items: center;
+}
+
+
+.header-translate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 18px 5%;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-logo img {
+   height: 61px;
+    width: 190px;
+    transition: 0.3s;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline effect */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: 0.3s;
+}
+
+.nav-item a:hover::after {
+    width: 65%;
+}
+
+/* ACTIVE */
+.active {
+    font-weight: 600;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* DROPDOWN */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 900px) {
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 999px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 60px 20px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.menu-open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: none;
+        box-shadow: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+/* BACKDROP */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+</style>
+
+
+<div class="main-wrapper">
+
+<!-- HEADER -->
+<div class="header-top">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="navbar-logo">
+        <img src="hydraulic-logo.jpeg">
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item"><a href="index.html">Home</a></li>
+
+        <li class="nav-item"><a href="about-us.html" class="active" style="color: #0094ff;">About Us</a></li>
+
+        <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
+
+          <li class="nav-item has-dropdown">
+            <a href="products.html">Products</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Products1</a></li>
+                <li><a href="#">Products2</a></li>
+                 <li><a href="#">Products3</a></li>
+                <li><a href="#">Products4</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item has-dropdown">
+            <a href="services.html">Services</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Services1</a></li>
+                <li><a href="#">Services2</a></li>
+                 <li><a href="#">Services3</a></li>
+                <li><a href="#">Services4</a></li>
+            </ul>
+        </li>
+
+           <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
+
+        <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const backdrop = document.getElementById("backdrop");
+
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("menu-open");
+    backdrop.classList.toggle("show");
+    document.body.classList.toggle("no-scroll");
+});
+
+backdrop.addEventListener("click", () => {
+    navMenu.classList.remove("menu-open");
+    backdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+});
+
+/* DROPDOWN */
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", function () {
+        this.parentElement.classList.toggle("open");
+    });
+});
+
+</script>
+
+</div>
+
+  <!-- header end -->
+
+ 
+    <style>
+        :root {
+            --amazon-orange: #FF9900;
+            --amazon-yellow: #FFD814;
+            --text-main: #0F1111;
+            --text-secondary: #565959;
+            --border-color: #DDD;
+        }
+
+        body {
+            font-family:  sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+            color: var(--text-main);
+        }
+
+        .product-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 10px auto;
+            gap: 40px;
+            align-items: flex-start; /* Crucial for sticky behavior */
+        }
+
+        /* --- Left Side: Fixed/Sticky Image --- */
+        .left-column {
+            position: sticky;
+            top: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .product-image {
+            max-width: 100%;
+            margin-top: 50px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+       
+
+        /* --- Right Side: Scrollable Content --- */
+        .right-column {
+            flex: 1.5;
+            padding-bottom: 10px; /* Space for long scrolling */
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.3;
+            margin: 10px 0;
+        }
+
+        ul{
+            font-size: 14px;
+            color: #333;
+            line-height: 23px;
+        }
+
+        .store-link {
+            color: #007185;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .rating {
+            color: #007185;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .price-section {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .discount {
+            color: #CC0C39;
+            font-size: 28px;
+            font-weight: 300;
+        }
+
+        .price-main {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* --- Buy Box Design --- */
+        .buy-box {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px;
+        }
+
+        .delivery-info {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .stock-status {
+            color: #007600;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .btn-cart {
+            background-color: var(--amazon-yellow);
+        }
+
+        .btn-buy {
+            background-color: var(--amazon-orange);
+        }
+
+        .info-table {
+            width: 100%;
+            font-size: 12px;
+            margin-top: 15px;
+            color: var(--text-secondary);
+        }
+
+        .info-table td { padding: 4px 0; }
+    </style>
+
+
+<div class="product-container" style="margin-top: 60px;">
+    
+    <div class="left-column">
+        <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="Steel Scrubber" class="product-image">
+        
+    </div>
+
+    <div class="right-column">
+        <nav class="breadcrumb">
+            Hydraulic  › Machines Supplies › Motors 
+        </nav>
+
+        <a href="#" class="store-link"> </a>
+          <h1><span style="color: #0094ff;">Product Description</span></h1>
+        <h3>VOLTURI Non Scratch Wire  Cloth (Pack of 10), Steel Scrubber for Utensils Cleaning, Multipurpose Wet and Dry Cleaning</h3>
+          
+        <p align="justify";>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, accusamus quasi voluptatem ea reiciendis necessitatibus consectetur sit culpa repudiandae asperiores corporis porro quam commodi reprehenderit! Beatae dicta quis dolores temporibus culpa nesciunt officiis exercitationem. Et tenetur ducimus,
+             reprehenderit iure in ipsam harum, beatae, magnam aliquid quas minima quibusdam. Nihil, suscipit?</p>
+         <div style="line-height: 1.5;">
+          
+            <ul>
+                <li>Multipurpose: Wet and Dry use</li>
+                <li>Non-scratch technology</li>
+                <li>Durable steel wire mesh</li>
+                <li>Pack of 10 for long-lasting value</li>
+            </ul>
+     
+        </div>
+          
+
+        <div class="price-section">          
+            <span class="price-main">₹199.00</span>
+            <p style="color: var(--text-secondary); font-size: 14px;">M.R.P: <del>₹999.00</del></p>
+        </div>
+
+        <div class="buy-box">
+            <div class="price-main">₹199.00</div>
+           
+            
+         
+            <div class="stock-status">In stock</div>
+
+           
+
+           
+            <button class="btn btn-buy"><a href="#">Buy Now</a></button>
+
+            <table class="info-table">
+                <tr><td>Ships from</td><td>Parker Group</td></tr>
+                <tr><td>Sold by</td><td>Abhishek</td></tr>
+                <tr><td>Payment</td><td>Secure transaction</td></tr>
+            </table>
+        </div>
+
+    
+    </div>
+
+</div>
+
+<div style="padding: 0px 120px;">
+       <h2><span style="color: #0094ff;">Product Specification</span></h2>
+             <p align="justify";>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus Lorem ipsum dolor sit amet
+             consectetur adipisicing elit. Nulla, 
+            temporibus Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus.</p>
+
+               <ul>
+                <li>Multipurpose: Wet and Dry use</li>
+                <li>Non-scratch technology</li>
+                  <li>Multipurpose: Wet and Dry use</li>
+                <li>Non-scratch technology</li>
+                  <li>Multipurpose: Wet and Dry use</li>
+                <li>Non-scratch technology</li>
+                
+            </ul>
+</div>
+
+
+<style>
+    .about-product-section {
+    padding: 17px 6%;
+    background: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.about-product-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* LEFT CARD */
+.about-product-image-card {
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.about-product-image-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-product-image-card img {
+   width: 100%;
+    max-width: 324px;
+    margin-bottom: -24px;
+}
+
+.about-product-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b2c4d;
+}
+
+/* RIGHT CONTENT */
+.about-product-content {
+    flex: 1.2;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.about-product-desc {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* LIST */
+.about-product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-product-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #333;
+}
+
+.about-product-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0094ff;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .about-product-container {
+        flex-direction: column;
+    }
+
+    .about-product-image-card,
+    .about-product-content {
+        width: 100%;
+    }
+}
+</style>
+
+<!-- product-slider-start -->
+<div class="vce-row-container">
+    <div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" data-vce-stretch-content="true" id="el-019f8d97" data-vce-do-apply="all el-019f8d97"><div class="vce-content-background-container"></div>
+<div class="vce-row-content" data-vce-element-content="true">
+    <div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-cff547fc">
+        <div class="vce-col-inner" data-vce-do-apply="border margin background  el-cff547fc">
+            <div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-cff547fc">
+                <div class="vce-raw-html">
+                    <div class="vce-raw-html-wrapper" id="el-f421ba99" data-vce-do-apply="all el-f421ba99">
+                        
+            
+
+    </div>
+
+    <div class="aurora-service-header">
+        
+        <h4 class="aurora-service-heading" style="color: black; text-align: center;"> Related  <span style="color: #0094ff;">Products</span> </h4>
+    </div>
+
+    <div class="aurora-service-carousel">
+        <button class="aurora-service-prev">❮</button>
+
+        <div class="aurora-service-track">
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/ship-agency-.png" alt="Ship Agency"></a>
+                <div class="aurora-service-caption">
+                    <h3>Ship Agency</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/protecting-agency.png" alt="Protecting Agency"></a>
+                <div class="aurora-service-caption">
+                    <h3>Protecting Agency</h3>
+                    <a href=" " class="aurora-learn">Learn
+                        More →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/ship-supply.png" alt="Ship Supply"></a>
+                <div class="aurora-service-caption">
+                    <h3>Ship Supply</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/cargo-clearence.png" alt="Marine Services"></a>
+                <div class="aurora-service-caption">
+                    <h3>Cargo Clearance</h3>
+                    <a href=" " class="aurora-learn">Learn
+                        More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/crew-manning.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>Crew Manning</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/green-passsort.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>IHM / Green Passport</h3>
+                    <a href=" " class="aurora-learn">Learn
+                        More →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/yatch-agency.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>Yacht Agency</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href="https://aurorashipping.net/services/ship-spare-parts/"><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/ship-spare.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>Ship Spare Parts</h3>
+                    <a href="https://aurorashipping.net/services/ship-spare-parts/" class="aurora-learn">Learn
+                        More
+                        →</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="aurora-service-next">❯</button>
+    </div>
+
+    
+</section>
+
+<style>
+    .aurora-service-slider {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+        text-align: center;
+        background: url('https://aurorashipping.net/wp-content/uploads/2025/11/Home-page-0-1.jpeg') no-repeat center/cover !important;
+    }
+
+    .aurora-service-overlay {
+        position: absolute;
+        inset: 0;
+        background: transparent !important;
+        z-index: 1;
+    }
+
+    .aurora-service-slide img {
+        width: 100%;
+        height: 250px !important;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .aurora-service-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+        color: #fff;
+        text-align: center !important;
+    }
+
+    .aurora-service-prev,
+    .aurora-service-next {
+        background: transparent !important;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 15% !important;
+        font-size: 22px;
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        z-index: 3;
+        transition: all 0.3s ease;
+        padding: 8px 14px;
+    }
+
+    .aurora-service-slider {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+        text-align: center;
+        background: url('https://aurorashipping.net/wp-content/uploads/2025/11/Home-page-0.jpeg') no-repeat center/cover;
+    }
+
+    .aurora-service-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(6, 16, 38, 0.85);
+        z-index: 1;
+    }
+
+    .aurora-service-header {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+
+    .aurora-service-badge {
+        display: inline-block;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 6px;
+        color: #fff;
+        background: transparent;
+        padding: 6px 14px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .aurora-service-heading {
+        font-size: 40px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.3;
+    }
+
+    .aurora-service-carousel {
+        position: relative;
+        width: 85%;
+        margin: 0 auto;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .aurora-service-track {
+        display: flex;
+        transition: transform 0.8s ease-in-out;
+        gap: 30px;
+    }
+
+    .aurora-service-slide {
+        flex: 0 0 calc(33.333% - 20px);
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .aurora-service-slide img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .aurora-service-slide:hover img {
+        transform: scale(1.05);
+    }
+
+    .aurora-service-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+        color: #fff;
+        text-align: left;
+    }
+
+    .aurora-service-caption h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .aurora-learn {
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .aurora-learn:hover {
+        color: #0094ff;
+    }
+
+    .aurora-service-prev,
+    .aurora-service-next {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        font-size: 22px;
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        z-index: 3;
+        transition: all 0.3s ease;
+        padding: 8px 14px;
+    }
+
+    .aurora-service-prev:hover,
+    .aurora-service-next:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .aurora-service-prev {
+        left: 0;
+    }
+
+    .aurora-service-next {
+        right: 0;
+    }
+
+    .aurora-service-btn-wrap {
+        margin-top: 50px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .aurora-service-btn {
+        background: #0094ff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .aurora-service-btn:hover {
+        background: #0076d9;
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 1024px) {
+        .aurora-service-slide {
+            flex: 0 0 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .aurora-service-slide {
+            flex: 0 0 100%;
+        }
+
+        .aurora-service-heading {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<script>
+  
+
+    const track = document.querySelector(".aurora-service-track");
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector(".aurora-service-next");
+    const prevBtn = document.querySelector(".aurora-service-prev");
+
+    let visibleSlides = 3;   // default desktop
+    let slideWidth = 0;
+    let index = 0;
+    let isMoving = false;
+
+ 
+    function updateVisibleSlides() {
+        if (window.innerWidth <= 768) visibleSlides = 1;
+        else if (window.innerWidth <= 1024) visibleSlides = 2;
+        else visibleSlides = 3;
+
+        slideWidth = track.querySelector(".aurora-service-slide").offsetWidth + 30;
+    }
+
+
+    function setupClones() {
+        track.innerHTML = "";
+        slides.forEach(s => track.appendChild(s.cloneNode(true))); // original
+        slides.forEach(s => track.appendChild(s.cloneNode(true))); // second batch
+        slides.forEach(s => track.appendChild(s.cloneNode(true))); // third batch
+    }
+
+    function moveSlider() {
+        track.style.transition = "transform 0.6s ease";
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+
+    function jumpSlider() {
+        track.style.transition = "none";
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+
+    track.addEventListener("transitionend", () => {
+        isMoving = false;
+
+        let total = slides.length * 3;
+
+        if (index >= total - visibleSlides) {
+            index = slides.length;
+            jumpSlider();
+        }
+        else if (index < slides.length) {
+            index = slides.length + (visibleSlides - 1);
+            jumpSlider();
+        }
+    });
+
+   
+    nextBtn.addEventListener("click", () => {
+        if (isMoving) return;
+        isMoving = true;
+        index++;
+        moveSlider();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (isMoving) return;
+        isMoving = true;
+        index--;
+        moveSlider();
+    });
+
+
+    setInterval(() => {
+        if (!isMoving) {
+            isMoving = true;
+            index++;
+            moveSlider();
+        }
+    }, 3000);
+
+ 
+    function initAuroraSlider() {
+        setupClones();
+        updateVisibleSlides();
+
+        index = slides.length;
+        jumpSlider();
+    }
+
+    initAuroraSlider();
+    window.addEventListener("resize", () => {
+        updateVisibleSlides();
+        jumpSlider();
+    });
+</script>
+
+</div>
+</div>
+</div>
+ </div>
+   </div>
+    </div>
+   </div>
+
+
+
+</div>
+
+
+</body>
+</html>

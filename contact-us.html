@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Contact Us | </title>
+
+          <!-- header start -->
+    <style>
+
+/* HEADER TOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+    align-items: center;
+}
+
+
+.header-translate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 18px 5%;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-logo img {
+   height: 61px;
+    width: 190px;
+    transition: 0.3s;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline effect */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: 0.3s;
+}
+
+.nav-item a:hover::after {
+    width: 65%;
+}
+
+/* ACTIVE */
+.active {
+    font-weight: 600;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* DROPDOWN */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 900px) {
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 999px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 60px 20px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.menu-open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: none;
+        box-shadow: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+/* BACKDROP */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+</style>
+
+
+<div class="main-wrapper">
+
+<!-- HEADER -->
+<div class="header-top">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="navbar-logo">
+        <img src="hydraulic-logo.jpeg">
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item"><a href="index.html">Home</a></li>
+
+        <li class="nav-item"><a href="about-us.html">About Us</a></li>
+
+        <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
+
+          <li class="nav-item has-dropdown">
+            <a href="products.html">Products</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Products1</a></li>
+                <li><a href="#">Products2</a></li>
+                 <li><a href="#">Products3</a></li>
+                <li><a href="#">Products4</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item has-dropdown">
+            <a href="services.html">Services</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Services1</a></li>
+                <li><a href="#">Services2</a></li>
+                 <li><a href="#">Services3</a></li>
+                <li><a href="#">Services4</a></li>
+            </ul>
+        </li>
+
+           <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
+
+        <li class="nav-item"><a href="contact-us.html" class="active" style="color: #0094ff;">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const backdrop = document.getElementById("backdrop");
+
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("menu-open");
+    backdrop.classList.toggle("show");
+    document.body.classList.toggle("no-scroll");
+});
+
+backdrop.addEventListener("click", () => {
+    navMenu.classList.remove("menu-open");
+    backdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+});
+
+/* DROPDOWN */
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", function () {
+        this.parentElement.classList.toggle("open");
+    });
+});
+
+</script>
+
+</div>
+
+  <!-- header end -->
+
+    <style>
+        :root {
+            --contact-m-sky: #38bdf8; /* Sky 400 */
+            --contact-m-deep: #0ea5e9; /* Sky 500 */
+            --contact-m-black: #000000;
+            --contact-m-card-bg: #0a0a0a;
+        }
+
+        .contact-m-body {
+            background-color: whitesmoke;
+            color: #0ea5e9;
+        }
+
+        .contact-m-glass {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-m-glass:hover {
+            border-color: var(--contact-m-sky);
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-m-input {
+            background: #111111;
+            border: 1px solid #222222;
+            color: #0ea5e9;
+            transition: all 0.3s ease;
+        }
+
+        .contact-m-input:focus {
+            outline: none;
+            border-color: var(--contact-m-sky);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+            background: #050505;
+        }
+
+        .contact-m-sky-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, var(--contact-m-sky) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-m-btn {
+            background: var(--contact-m-sky);
+            color: #000000;
+            transition: all 0.3s ease;
+        }
+
+        .contact-m-btn:hover {
+            background: #0a0a0a;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* Animated Sky Glows */
+        .contact-m-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="contact-m-body font-sans antialiased">
+
+    <div class="relative min-h-screen py-20 px-6 overflow-hidden">
+        <div class="contact-m-orb w-96 h-96 bg-sky-600 top-[-10%] left-[-5%]"></div>
+        <div class="contact-m-orb w-80 h-80 bg-sky-900 bottom-[-5%] right-[-5%]"></div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase">
+                    Connect <span class="contact-m-sky-gradient">With Us</span>
+                </h1>
+                <p class="text-slate-500 text-lg max-w-xl mx-auto">
+                    Let’s discuss your next project. We combine environmental expertise with sky-high technical ambition.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8">
+                
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="contact-m-glass p-8 rounded-3xl">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-sky-500/10 flex items-center justify-center text-sky-400">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <h4 class="font-bold uppercase tracking-widest text-sm">Global HQ</h4>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed">
+                            Exchequer Court, 33 St Mary Axe,<br> London, United Kingdom
+                        </p>
+                    </div>
+
+                    <div class="contact-m-glass p-8 rounded-3xl">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-sky-500/10 flex items-center justify-center text-sky-400">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <h4 class="font-bold uppercase tracking-widest text-sm">Call Center</h4>
+                        </div>
+                        <p class="text-slate-400">+44 (0) 20 3206 5200</p>
+                        <p class="text-sky-400 font-medium">Available 24/7 for partners</p>
+                    </div>
+
+                    <div class="contact-m-glass p-8 rounded-3xl border-l-4 border-l-sky-500">
+                        <h4 class="font-bold mb-2">Digital Enabler</h4>
+                        <p class="text-sm text-slate-500 italic">"Leveraging complex data for a sustainable, resilient future."</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <form class="contact-m-glass p-10 md:p-12 rounded-[2.5rem] space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="flex flex-col">
+                                <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Identity</label>
+                                <input type="text" placeholder="Name" class="contact-m-input px-5 py-4 rounded-xl">
+                            </div>
+                            <div class="flex flex-col">
+                                <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Correspondence</label>
+                                <input type="email" placeholder="Email" class="contact-m-input px-5 py-4 rounded-xl">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Industry Sector</label>
+                            <select class="contact-m-input px-5 py-4 rounded-xl appearance-none cursor-pointer">
+                                <option>Energy & Low Carbon</option>
+                                <option>Tech & Media</option>
+                                <option>Manufacturing</option>
+                                <option>Mining & Minerals</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Message Brief</label>
+                            <textarea rows="4" placeholder="How can we assist your sustainability goals?" class="contact-m-input px-5 py-4 rounded-xl resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-m-btn w-full py-5 rounded-xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3">
+                            Execute Inquiry
+                            <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

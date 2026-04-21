@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Internship & Training | Future Talent</title>
+
+       <!-- header start -->
+    <style>
+
+/* HEADER TOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+    align-items: center;
+}
+
+
+.header-translate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 18px 5%;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-logo img {
+   height: 61px;
+    width: 190px;
+    transition: 0.3s;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline effect */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: 0.3s;
+}
+
+.nav-item a:hover::after {
+    width: 65%;
+}
+
+/* ACTIVE */
+.active {
+    font-weight: 600;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* DROPDOWN */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 900px) {
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 999px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 60px 20px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.menu-open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: none;
+        box-shadow: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+/* BACKDROP */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+</style>
+
+
+<div class="main-wrapper">
+
+<!-- HEADER -->
+<div class="header-top">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="navbar-logo">
+        <img src="hydraulic-logo.jpeg">
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item"><a href="index.html">Home</a></li>
+
+        <li class="nav-item"><a href="about-us.html" class="active" style="color: #0094ff;">About Us</a></li>
+
+        <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
+
+          <li class="nav-item has-dropdown">
+            <a href="products.html">Products</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Products1</a></li>
+                <li><a href="#">Products2</a></li>
+                 <li><a href="#">Products3</a></li>
+                <li><a href="#">Products4</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item has-dropdown">
+            <a href="services.html">Services</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Services1</a></li>
+                <li><a href="#">Services2</a></li>
+                 <li><a href="#">Services3</a></li>
+                <li><a href="#">Services4</a></li>
+            </ul>
+        </li>
+
+           <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
+
+        <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const backdrop = document.getElementById("backdrop");
+
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("menu-open");
+    backdrop.classList.toggle("show");
+    document.body.classList.toggle("no-scroll");
+});
+
+backdrop.addEventListener("click", () => {
+    navMenu.classList.remove("menu-open");
+    backdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+});
+
+/* DROPDOWN */
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", function () {
+        this.parentElement.classList.toggle("open");
+    });
+});
+
+</script>
+
+</div>
+
+  <!-- header end -->
+
+  
+    <style>
+        :root {
+            --training-m-sky: #38bdf8;
+            --training-m-black: #000000;
+            --training-m-card: #0a0a0a;
+            --training-m-border: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--training-m-black);
+            color: #ffffff;
+        }
+
+        .training-m-card {
+            background: var(--training-m-card);
+            border: 1px solid var(--training-m-border);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .training-m-card:hover {
+            border-color: var(--training-m-sky);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px -10px rgba(56, 189, 248, 0.2);
+        }
+
+        .training-m-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--training-m-sky), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .training-m-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .training-m-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--training-m-sky);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .training-m-btn-outline {
+            border: 1px solid var(--training-m-sky);
+            color: var(--training-m-sky);
+            transition: all 0.3s;
+        }
+
+        .training-m-btn-outline:hover {
+            background: var(--training-m-sky);
+            color: #000000;
+        }
+
+        .training-m-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <main class="relative min-h-screen py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+        
+        <div class="training-m-glow top-0 left-[-100px]"></div>
+        <div class="training-m-glow bottom-0 right-[-100px]"></div>
+
+        <header class="text-center mb-20">
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">
+                Next-Gen <span class="text-sky-400">Leaders</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                Fuel your ambition with hands-on experience in sustainability, digital EHS, and global risk management. Start your journey where impact meets innovation.
+            </p>
+        </header>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="training-m-card p-8 rounded-[2rem] flex flex-col h-full">
+                <div class="mb-6 flex justify-between items-start">
+                    <div class="w-12 h-12 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-400">
+                        <i class="fa-solid fa-leaf text-xl"></i>
+                    </div>
+                    <span class="training-m-badge px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Summer 2026</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Sustainability Analyst</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
+                    Assist global organizations in transitioning to a lower carbon economy. Work with real ESG data and carbon footprint analysis tools.
+                </p>
+                <button class="training-m-btn-outline w-full py-3 rounded-xl font-bold text-sm uppercase tracking-widest">Apply Now</button>
+            </div>
+
+            <div class="training-m-card p-8 rounded-[2rem] flex flex-col h-full border-sky-500/30">
+                <div class="mb-6 flex justify-between items-start">
+                    <div class="w-12 h-12 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-400">
+                        <i class="fa-solid fa-code text-xl"></i>
+                    </div>
+                    <span class="training-m-badge px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">6 Months</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Digital EHS Specialist</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
+                    Harness the power of digital technology as a key enabler. Learn to deploy AI-driven safety insights and complex data architectures.
+                </p>
+                <button class="bg-sky-400 text-black w-full py-3 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors">Join Cohort</button>
+            </div>
+
+            <div class="training-m-card p-8 rounded-[2rem] flex flex-col h-full">
+                <div class="mb-6 flex justify-between items-start">
+                    <div class="w-12 h-12 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-400">
+                        <i class="fa-solid fa-shield-virus text-xl"></i>
+                    </div>
+                    <span class="training-m-badge px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Graduate Program</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Business Resilience</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
+                    Master the art of shaping a sustainable future through risk mitigation and social governance for world-leading organizations.
+                </p>
+                <button class="training-m-btn-outline w-full py-3 rounded-xl font-bold text-sm uppercase tracking-widest">View Details</button>
+            </div>
+
+        </div>
+
+        <div class="mt-32 grid lg:grid-cols-4 gap-12 border-t border-white/5 pt-16">
+            <div class="text-center lg:text-left">
+                <h4 class="text-sky-400 font-bold mb-2">Mentorship</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">Learn from top industry experts</p>
+            </div>
+            <div class="text-center lg:text-left">
+                <h4 class="text-sky-400 font-bold mb-2">Certifications</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">Industry recognized credentials</p>
+            </div>
+            <div class="text-center lg:text-left">
+                <h4 class="text-sky-400 font-bold mb-2">Real Projects</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">No coffee runs, only real impact</p>
+            </div>
+            <div class="text-center lg:text-left">
+                <h4 class="text-sky-400 font-bold mb-2">Global Network</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">Connect across 40+ countries</p>
+            </div>
+        </div>
+
+        <section class="mt-32 bg-sky-500 rounded-[3rem] p-12 text-black text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-3xl font-black uppercase mb-4 tracking-tight">Ready to shape your future?</h2>
+                <p class="text-black/70 font-medium mb-8 max-w-lg mx-auto">Applications for the 2026 Sustainability Cohort are now open. Secure your spot today.</p>
+                <a href="#" class="inline-block bg-black text-white px-10 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform">Get Started</a>
+            </div>
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/20 rounded-full blur-2xl"></div>
+        </section>
+
+    </main>
+
+</body>
+</html>

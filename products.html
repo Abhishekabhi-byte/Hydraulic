@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+   
+
+        <!-- header start -->
+    <style>
+
+/* HEADER TOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+    align-items: center;
+}
+
+
+.header-translate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 18px 5%;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-logo img {
+   height: 61px;
+    width: 190px;
+    transition: 0.3s;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline effect */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: 0.3s;
+}
+
+.nav-item a:hover::after {
+    width: 65%;
+}
+
+/* ACTIVE */
+.active {
+    font-weight: 600;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* DROPDOWN */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 900px) {
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 999px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 60px 20px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.menu-open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: none;
+        box-shadow: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+/* BACKDROP */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+</style>
+
+<div class="main-wrapper">
+
+<!-- HEADER -->
+<div class="header-top">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="navbar-logo">
+        <img src="hydraulic-logo.jpeg">
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item"><a href="index.html" >Home</a></li>
+
+        <li class="nav-item"><a href="about-us.html">About Us</a></li>
+
+        <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
+
+          <li class="nav-item has-dropdown">
+            <a href="products.html" class="active" style="color: #0094ff;">Products</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Products1</a></li>
+                <li><a href="#">Products2</a></li>
+                 <li><a href="#">Products3</a></li>
+                <li><a href="#">Products4</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item has-dropdown">
+            <a href="services.html">Services</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Services1</a></li>
+                <li><a href="#">Services2</a></li>
+                 <li><a href="#">Services3</a></li>
+                <li><a href="#">Services4</a></li>
+            </ul>
+        </li>
+
+           <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
+
+        <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const backdrop = document.getElementById("backdrop");
+
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("menu-open");
+    backdrop.classList.toggle("show");
+    document.body.classList.toggle("no-scroll");
+});
+
+backdrop.addEventListener("click", () => {
+    navMenu.classList.remove("menu-open");
+    backdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+});
+
+/* DROPDOWN */
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", function () {
+        this.parentElement.classList.toggle("open");
+    });
+});
+
+</script>
+
+</div>
+
+  <!-- header end -->
+
+
+<style>
+/* SECTION */
+.products-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f5f7fa;
+}
+
+.products-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* GRID */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.product-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* TITLE */
+.product-card h3 {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* BUTTON */
+.product-card a {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.product-card a:hover {
+    background: #0056b3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .products-section h2 {
+        font-size: 24px;
+    }
+}
+</style>
+
+<section class="products-section">
+    <h2>OUR PRODUCTS</h2>
+
+    <div class="products-container">
+
+        <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Radius Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+       <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+       <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+       <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+       <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+     <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="">
+            <h3>Vertical Storing Telescopic Lip Dock Leveler</h3>
+            <a href="#">View →</a>
+        </div>
+
+    </div>
+</section>
+ 
+
+
+<!-- footer -->
+
+    <footer class="aurora-footer mb-0">
+    <div class="footer-container">
+        <!-- Left Logo Section -->
+        <div class="footer-col footer-brand">
+            <img src="hydraulic-logo.jpeg"
+                alt="Aurora Shipping Logo" class="footer-logo" />
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum recusandae saepe sed. Voluptas inventore laudantium fugit beataasi, 
+                consum provident expedita dignissimos! Nostrum.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href=" ">Home</a></li>
+                <li><a href=" ">About us</a></li>
+                <li><a href=" ">Products</a></li>
+                <li><a href=" ">Services</a></li>              
+                <li><a href=" ">Blogs</a></li>
+                <li><a href=" ">Contact us</a></li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href=" ">Services</a></li>
+                <li><a href=" ">Services2</a></li>
+                <li><a href=" ">Services3</a></li>
+                <li><a href=" ">Services4</a></li>
+                <li><a href=" ">Services5</a></li>
+                <li><a href=" "> Services7</a> </li>
+                <li><a href=" ">Services8</a></li>
+                <li><a href=" ">Services9</a></li>
+            </ul>
+        </div>
+
+        <!-- Explore Our Products -->
+        <div class="footer-col">
+            <h4>Explore Our Products</h4>
+            <ul>
+                <li><a href=" ">product</a></li>
+                <li><a href="">product2</a>
+                </li>
+                <li><a href=" ">product3</a></li>
+                <li><a href=" ">product4</a></li>
+                <li><a href=" ">product5</a></li>
+                <li><a href=" ">product6</a>
+                </li>
+                <li><a href=" ">Explore Other Products</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h4>Contact us</h4>
+            <ul>
+                <li>Phone: <a href="tel:+97190443933">+971 4 244 3933</a></li>
+                <li>Email: <a href="mailto:info@ing.net">info@abhiffd.net</a></li>
+                <li>Head Office:  Lorem ipsum, dolor corrupti,elit illum voluptatibus.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <hr />
+        <p>© Raj Digital Marketing, All Right Reserved</p>
+    </div>
+</footer>
+
+<style>
+    .aurora-footer {
+        background-color: #061026;
+        color: #fff;
+        font-family: 'Figtree', sans-serif;
+        padding: 70px 8% 1px !important;
+    }
+
+    .aurora-footer {
+        background-color: #061026;
+        color: #fff;
+        font-family: 'Figtree', sans-serif;
+        padding: 70px 8% 30px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        width: 180px;
+        margin-bottom: 15px;
+        background: #fff;
+        border-radius: 10px !important;
+        padding: 0 8px !important;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 18px;
+        font-weight: 700;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #c9d1da;
+        line-height: 1.6;
+    }
+
+    .footer-col ul li a {
+        color: #c9d1da;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+        color: #0094ff;
+    }
+
+    .footer-brand p {
+        font-size: 14px;
+        color: #c9d1da;
+        line-height: 1.6;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .footer-bottom hr {
+        border: 0;
+        height: 1px;
+        background: #3b4a63;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom p {
+        color: #a6b1c2;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .aurora-footer {
+            padding: 60px 6% 30px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin: 0 auto 20px;
+        }
+
+        .footer-col h4 {
+            margin-top: 20px;
+        }
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Resilient Institute of Hydraulic | Hydraulic Training & Engineering Institute</title>
+
+    <!-- Basic SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resilient Institute of Hydraulic provides professional training, certification, and engineering solutions in hydraulic systems. Learn practical skills with industry experts.">
+    <meta name="keywords" content="hydraulic institute, hydraulic training, hydraulic course, industrial training, engineering institute, hydraulic systems, certification hydraulic">
+    <meta name="author" content="Resilient Institute of Hydraulic">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Resilient Institute of Hydraulic">
+    <meta property="og:description" content="Professional hydraulic training and engineering solutions. Learn from experts and build your career in hydraulic systems.">
+    <meta property="og:image" content="hydraulic-logo.jpeg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Resilient Institute of Hydraulic">
+    <meta name="twitter:description" content="Join Resilient Institute of Hydraulic for industry-level training and certification.">
+    <meta name="twitter:image" content="hydraulic-logo.jpeg">
+
+    <!-- Favicon -->
+     <link rel="icon" type="image/png" href="hydraulic-favicon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com">
+
+</head>
+<body>
+     
+    <style>
+        body{
+            background: rgb(213, 210, 210);
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+    </style>
+   
+
+   
+        <!-- header start -->
+    <style>
+
+/* HEADER TOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+    align-items: center;
+}
+
+
+.header-translate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 18px 5%;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-logo img {
+   height: 61px;
+    width: 190px;
+    transition: 0.3s;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline effect */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: 0.3s;
+}
+
+.nav-item a:hover::after {
+    width: 65%;
+}
+
+/* ACTIVE */
+.active {
+    font-weight: 600;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* DROPDOWN */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 900px) {
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 999px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 60px 20px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.menu-open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: none;
+        box-shadow: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+/* BACKDROP */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+</style>
+
+
+<div class="main-wrapper">
+
+<!-- HEADER -->
+<div class="header-top">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="navbar-logo">
+        <img src="hydraulic-logo.jpeg">
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item"><a href="index.html"class="active" style="color: #0094ff;">Home</a></li>
+
+        <li class="nav-item"><a href="about-us.html">About Us</a></li>
+
+        <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
+
+          <li class="nav-item has-dropdown">
+            <a href="products.html">Products</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Products1</a></li>
+                <li><a href="#">Products2</a></li>
+                 <li><a href="#">Products3</a></li>
+                <li><a href="#">Products4</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item has-dropdown">
+            <a href="services.html">Services</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="#">Services1</a></li>
+                <li><a href="#">Services2</a></li>
+                 <li><a href="#">Services3</a></li>
+                <li><a href="#">Services4</a></li>
+            </ul>
+        </li>
+
+           <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
+
+        <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const backdrop = document.getElementById("backdrop");
+
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("menu-open");
+    backdrop.classList.toggle("show");
+    document.body.classList.toggle("no-scroll");
+});
+
+backdrop.addEventListener("click", () => {
+    navMenu.classList.remove("menu-open");
+    backdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+});
+
+/* DROPDOWN */
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", function () {
+        this.parentElement.classList.toggle("open");
+    });
+});
+
+</script>
+
+</div>
+
+  <!-- header end -->
+
+<!-- top slider -->
+<div class="vce-row-container">
+  <div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" data-vce-stretch-content="true" id="el-7055be79" data-vce-do-apply="all el-7055be79">
+    <div class="vce-content-background-container">
+    </div>
+    <div class="vce-row-content" data-vce-element-content="true">
+      <div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-e02a1ef8">
+        <div class="vce-col-inner" data-vce-do-apply="border margin background  el-e02a1ef8">
+          <div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-e02a1ef8">
+            <div class="vce-raw-html">
+                <div class="vce-raw-html-wrapper" id="el-09a85a62" data-vce-do-apply="all el-09a85a62">
+          
+   <style>
+    .heroAurora-slider {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .heroAurora-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 8%;
+    }
+
+    .heroAurora-slide.active {
+        left: 0;
+        opacity: 1;
+    }
+
+    .heroAurora-slide.prev {
+        left: -100%;
+    }
+
+    .heroAurora-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1;
+    }
+
+    .heroAurora-content {
+        position: relative;
+        z-index: 2;
+        color: #fff !important;
+        max-width: 600px;
+        animation: heroAuroraFadeUp 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    .heroAurora-slide.active .heroAurora-content {
+        opacity: 1;
+    }
+
+    .heroAurora-badge {
+        background: rgba(255, 255, 255, 0.25);
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 18px;
+        backdrop-filter: blur(5px);
+        color: #fff;
+    }
+
+    .heroAurora-title {
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    .heroAurora-text {
+        font-size: 17px;
+        color: #fff;
+        line-height: 1.6;
+        margin-bottom: 35px;
+    }
+
+    .heroAurora-buttons {
+        display: flex;
+        gap: 20px;
+    }
+
+    .heroAurora-btn-primary {
+        padding: 12px 30px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        background-color: #0094ff;
+        color: #fff;
+        border: none;
+    }
+
+    .heroAurora-btn-primary:hover {
+        background-color: #0077cc;
+        transform: scale(1.05);
+    }
+
+    .heroAurora-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.6);
+        border-radius: 15%;
+        padding: 5px 15px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 22px;
+        z-index: 3;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(3px);
+    }
+
+    .heroAurora-nav:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .heroAurora-prev {
+        left: 40px;
+    }
+
+    .heroAurora-next {
+        right: 40px;
+    }
+
+    @keyframes heroAuroraFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width:600px) {
+        .heroAurora-slider {
+            height: 65vh;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .heroAurora-nav {
+            display: none !important;
+        }
+
+        .heroAurora-title {
+            font-size: 32px;
+        }
+
+        .heroAurora-text {
+            font-size: 15px;
+        }
+
+        .heroAurora-buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+</style>
+
+
+<div class="heroAurora-slider">
+<div class="heroAurora-slide active" style="background-image: url('https://aurorashipping.net/wp-content/uploads/2025/11/Premium-Marine-Coating-Solutions.png')">
+    <div class="heroAurora-overlay"></div>
+    <div class="heroAurora-content">
+        <div class="heroAurora-badge">Marine mnf &amp; service</div>
+        <h1 class="heroAurora-title">Premium Marine Coating Solutions</h1>
+        <p class="heroAurora-text">
+             Aut laboriosam magnam provident laudantium debitis quasi nemo, inventore labore soluta quos pariatur!
+        </p>
+    </div>
+</div>
+
+    <div class="heroAurora-slide" style="background-image:url('https://aurorashipping.net/wp-content/uploads/2025/11/Trusted-Support-at-Every-Port.png')">
+        <div class="heroAurora-overlay"></div>
+        <div class="heroAurora-content">
+            <div class="heroAurora-badge">ipsum dolor sit amet Partner</div>
+            <h1 class="heroAurora-title">Trusted Support at Every Port</h1>
+            <p class="heroAurora-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum perspiciatis m.</p>
+           
+        </div>
+    </div>
+
+    <div class="heroAurora-slide" style="background-image:url('https://aurorashipping.net/wp-content/uploads/2025/11/Dependable-Marine-Cargo-Solutions-for-a-Challenging-World.png')">
+        <div class="heroAurora-overlay"></div>
+        <div class="heroAurora-content">
+            <div class="heroAurora-badge">Lorem ipsum dolor sit amet &amp; Operations</div>
+            <h1 class="heroAurora-title">ipsum dolor sit amet &amp;  Support You Can Trust</h1>
+            <p class="heroAurora-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          
+        </div>
+    </div>
+
+    <div class="heroAurora-nav heroAurora-prev">❮</div>
+    <div class="heroAurora-nav heroAurora-next">❯</div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const heroSlides = document.querySelectorAll('.heroAurora-slide');
+        const heroPrev = document.querySelector('.heroAurora-prev');
+        const heroNext = document.querySelector('.heroAurora-next');
+
+        let heroIndex = 0;
+
+        function heroShowSlide(i) {
+            heroSlides.forEach((slide, idx) => {
+                slide.classList.remove('active', 'prev');
+
+                if (idx === i) {
+                    slide.classList.add('active');
+                } else if (idx === (i - 1 + heroSlides.length) % heroSlides.length) {
+                    slide.classList.add('prev');
+                }
+            });
+        }
+
+        heroNext.addEventListener('click', () => {
+            heroIndex = (heroIndex + 1) % heroSlides.length;
+            heroShowSlide(heroIndex);
+        });
+
+        heroPrev.addEventListener('click', () => {
+            heroIndex = (heroIndex - 1 + heroSlides.length) % heroSlides.length;
+            heroShowSlide(heroIndex);
+        });
+
+        setInterval(() => {
+            heroIndex = (heroIndex + 1) % heroSlides.length;
+            heroShowSlide(heroIndex);
+        }, 6000);
+
+    });
+</script>
+
+</div>
+</div>
+ </div>
+  </div> 
+ </div>
+    </div>
+     </div>
+ </div>
+
+ <!-- top slider- end -->
+  
+  <style>
+/* TOP LINE */
+.about-top-line {
+    height: 6px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+}
+
+/* MAIN SECTION */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px  8%;
+    gap: 50px;
+    background: #f8fbff;
+    flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.about-images {
+    flex: 1;
+    width: 100%;
+    max-width: 450px;   /* ✅ control size on desktop */
+    margin: 0 auto;     /* center nicely */
+}
+
+.about-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.about-card {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transition: 0.4s;
+}
+
+.about-card img {
+    width: 100%;
+    height: auto;           /* ✅ responsive */
+    aspect-ratio: 4/5;      /* ✅ consistent shape */
+    object-fit: cover;
+}
+
+/* HOVER EFFECT */
+.about-card:hover {
+    transform: translateY(-6px);
+}
+
+/* RIGHT SIDE */
+.about-content {
+    flex: 1;
+
+    width: 100%;
+}
+.about-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+    width: fit-content;
+    color:#0094ff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.about-badge:hover{
+    background: #031624;
+    color: #f5eded;
+}
+.about-heading {
+    text-align: left;
+    font-size: 38px;
+    font-weight: 800;
+    color: #052552;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.about-text {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* FEATURE BOX */
+.about-feature-box {
+    background: #e8f4ff;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-feature-box h3 {
+    margin-bottom: 10px;
+}
+
+.about-feature-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-feature-box li {
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.about-feature-box li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #0094ff;
+}
+
+/* BUTTON */
+.about-btn {
+    display: inline-block;
+    background: #0094ff;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #0077cc;
+}
+
+/* ========================= */
+/* 📱 TABLET (<=1024px) */
+/* ========================= */
+@media (max-width: 1024px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+        gap: 40px;
+    }
+
+    .about-heading {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-images {
+        max-width: 100%;   /* ✅ full width on mobile */
+    }
+}
+
+
+/* ========================= */
+/* 📱 MOBILE (<=768px) */
+/* ========================= */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 40px 5%;
+    }
+
+    .about-heading {
+        font-size: 26px;
+    }
+
+    .about-text {
+        font-size: 14px;
+    }
+
+    .about-feature-box {
+        text-align: left;
+    }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE (<=480px) */
+/* ========================= */
+@media (max-width: 480px) {
+    .about-heading {
+        font-size: 22px;
+    }
+
+    .about-badge {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .about-text {
+        font-size: 13px;
+    }
+
+    .about-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+
+
+<div class="about-top-line"></div>
+
+<section class="about-section">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-images">
+        <div class="about-card">
+            <img src="https://aurorashipping.net/wp-content/uploads/2025/11/A.png" alt="About Image">
+        </div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-content">
+
+        <div class="about-badge">About us</div>
+
+        <h2 class="about-heading">
+            Building Enduring Value<br>for Our Maritime Partners
+        </h2>
+
+        <p class="about-text">
+            We deliver ocean solutions using deep maritime expertise and advanced coating technologies,
+            ensuring efficiency, safety, and long-term partnerships.
+            We deliver ocean solutions using deep maritime expertise and advanced coating technologies,
+             ensuring efficiency, safety, and long-term partnerships.
+        </p>
+
+        <div class="about-feature-box">
+            <h3>Our Key Features</h3>
+            <ul>
+                <li>All-in-one marine services</li>
+                <li>Expert coating protection</li>
+                <li>Fast & reliable support</li>
+                <li>Global maritime expertise</li>
+            </ul>
+        </div>
+
+        <a href="#" class="about-btn">Know More</a>
+
+    </div>
+
+</section>
+
+<!-- text-start-slide -->
+
+<style>
+    .text-slide-section {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.text-slide-track {
+    display: flex;
+    white-space: nowrap;
+    animation: textSlideMove 25s linear infinite;
+}
+
+.text-slide-text {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-right: 80px;
+    padding: 20px 0px;
+    color: transparent;
+    -webkit-text-stroke: 1px #6c879a;
+    opacity: 0.9;
+    user-select: none;
+}
+
+/* animation */
+@keyframes textSlideMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .text-slide-text {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-slide-text {
+        font-size: 28px;
+    }
+}
+</style>
+
+ <section class="text-slide-section">
+    <div class="text-slide-track">
+        <span class="text-slide-text">
+            AUTHORIZED DISTRIBUTOR OF HEMPEL MARINE AND PROTECTIVE COATINGS
+        </span>
+        <span class="text-slide-text">
+            AUTHORIZED DISTRIBUTOR OF HEMPEL MARINE AND PROTECTIVE COATINGS
+        </span>
+    </div>
+    
+</section>
+
+<script>
+const leftImage = document.getElementById('leftImage');
+const rightImage = document.getElementById('rightImage');
+
+const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+io.observe(leftImage);
+io.observe(rightImage);
+</script>
+
+<!-- text-slide-end -->
+
+<section class="about-product-section">
+<h2 style="text-align: center; color: rgb(16, 94, 154);"><span style="color: rgb(47, 45, 45);">OUR</span> PRODUCTS</h2>
+    <div class="about-product-container">
+
+        <!-- LEFT CARD -->
+        <div class="about-product-image-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="Hydraulic Cylinder">
+
+            <h3 class="about-product-title">Hydraulic Cylinder Repair</h3>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-product-content">
+
+            <p class="about-product-desc">
+                Hydraulic cylinders are economical to repair and we repair some of the largest.
+                Our new cylinder repair station accommodates units to 16 inches in bore and
+                240 inches in stroke.
+            </p>
+
+            <ul class="about-product-list">
+                <li>All brands and styles of hydraulic and pneumatic cylinders and rams.</li>
+                <li>Cylinders up to 16 inches in bore and 240 inches in stroke.</li>
+                <li>Custom rod ends, chroming and finishing services available.</li>
+                <li>Fast and reliable delivery options.</li>
+            </ul>
+ <div class="heroAurora-buttons" style="display:flex; justify-content:right; align-items:right;">
+                <a href="products1.html"><button class="heroAurora-btn-primary">Read
+                         More →</button></a>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <div class="about-product-container">
+
+        <!-- LEFT CARD -->
+        <div class="about-product-image-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="Hydraulic Cylinder">
+
+            <h3 class="about-product-title">Hydraulic Cylinder Repair</h3>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-product-content">
+
+            <p class="about-product-desc">
+                Hydraulic cylinders are economical to repair and we repair some of the largest.
+                Our new cylinder repair station accommodates units to 16 inches in bore and
+                240 inches in stroke.
+            </p>
+
+            <ul class="about-product-list">
+                <li>All brands and styles of hydraulic and pneumatic cylinders and rams.</li>
+                <li>Cylinders up to 16 inches in bore and 240 inches in stroke.</li>
+                <li>Custom rod ends, chroming and finishing services available.</li>
+                <li>Fast and reliable delivery options.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <br>
+    <div class="about-product-container">
+
+        <!-- LEFT CARD -->
+        <div class="about-product-image-card">
+            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="Hydraulic Cylinder">
+
+            <h3 class="about-product-title">Hydraulic Cylinder Repair</h3>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-product-content">
+
+            <p class="about-product-desc">
+                Hydraulic cylinders are economical to repair and we repair some of the largest.
+                Our new cylinder repair station accommodates units to 16 inches in bore and
+                240 inches in stroke.
+            </p>
+
+            <ul class="about-product-list">
+                <li>All brands and styles of hydraulic and pneumatic cylinders and rams.</li>
+                <li>Cylinders up to 16 inches in bore and 240 inches in stroke.</li>
+                <li>Custom rod ends, chroming and finishing services available.</li>
+                <li>Fast and reliable delivery options.</li>
+            </ul>
+
+        </div>
+
+    </div>
+    <br>
+
+    
+  <div class="heroAurora-buttons" style="display:flex; justify-content:center; align-items:center;">
+                <a href="products.html"><button class="heroAurora-btn-primary">View
+                         More →</button></a>
+            </div>
+            
+</section>
+
+
+
+
+<style>
+    .about-product-section {
+    padding: 17px 6%;
+    background: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.about-product-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* LEFT CARD */
+.about-product-image-card {
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.about-product-image-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-product-image-card img {
+   width: 100%;
+    max-width: 324px;
+    margin-bottom: -24px;
+}
+
+.about-product-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b2c4d;
+}
+
+/* RIGHT CONTENT */
+.about-product-content {
+    flex: 1.2;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.about-product-desc {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* LIST */
+.about-product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-product-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #333;
+}
+
+.about-product-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0094ff;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .about-product-container {
+        flex-direction: column;
+    }
+
+    .about-product-image-card,
+    .about-product-content {
+        width: 100%;
+    }
+}
+</style>
+
+<!-- product-slider-start -->
+<div class="vce-row-container">
+    <div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" data-vce-stretch-content="true" id="el-019f8d97" data-vce-do-apply="all el-019f8d97"><div class="vce-content-background-container"></div>
+<div class="vce-row-content" data-vce-element-content="true">
+    <div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-cff547fc">
+        <div class="vce-col-inner" data-vce-do-apply="border margin background  el-cff547fc">
+            <div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-cff547fc">
+                <div class="vce-raw-html">
+                    <div class="vce-raw-html-wrapper" id="el-f421ba99" data-vce-do-apply="all el-f421ba99">
+                        
+            <section class="aurora-service-slider">
+    <div class="aurora-service-overlay">
+
+    </div>
+
+    <div class="aurora-service-header">
+        <div class="aurora-service-badge">Our Products</div>
+        <h2 class="aurora-service-heading">Canvas of Basic Marine, Logistics &amp; Coating Services<br>Under One Roof
+        </h2>
+    </div>
+
+    <div class="aurora-service-carousel">
+        <button class="aurora-service-prev">❮</button>
+
+        <div class="aurora-service-track">
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/ship-agency-.png" alt="Ship Agency"></a>
+                <div class="aurora-service-caption">
+                    <h3>Ship Agency</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/protecting-agency.png" alt="Protecting Agency"></a>
+                <div class="aurora-service-caption">
+                    <h3>Protecting Agency</h3>
+                    <a href=" " class="aurora-learn">Learn
+                        More →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/ship-supply.png" alt="Ship Supply"></a>
+                <div class="aurora-service-caption">
+                    <h3>Ship Supply</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/cargo-clearence.png" alt="Marine Services"></a>
+                <div class="aurora-service-caption">
+                    <h3>Cargo Clearance</h3>
+                    <a href=" " class="aurora-learn">Learn
+                        More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/crew-manning.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>Crew Manning</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/green-passsort.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>IHM / Green Passport</h3>
+                    <a href=" " class="aurora-learn">Learn
+                        More →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href=" "><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/yatch-agency.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>Yacht Agency</h3>
+                    <a href=" " class="aurora-learn">Learn More
+                        →</a>
+                </div>
+            </div>
+
+            <div class="aurora-service-slide">
+                <a href="https://aurorashipping.net/services/ship-spare-parts/"><img decoding="async" src="https://aurorashipping.net/wp-content/uploads/2025/12/ship-spare.png" alt="Freight Forwarding"></a>
+                <div class="aurora-service-caption">
+                    <h3>Ship Spare Parts</h3>
+                    <a href="https://aurorashipping.net/services/ship-spare-parts/" class="aurora-learn">Learn
+                        More
+                        →</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="aurora-service-next">❯</button>
+    </div>
+
+    <div class="aurora-service-btn-wrap">
+        <a href="https://aurorashipping.net/services/">
+            <button class="aurora-service-btn">Know More</button>
+        </a>
+    </div>
+</section>
+
+<style>
+    .aurora-service-slider {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+        text-align: center;
+        background: url('https://aurorashipping.net/wp-content/uploads/2025/11/Home-page-0-1.jpeg') no-repeat center/cover !important;
+    }
+
+    .aurora-service-overlay {
+        position: absolute;
+        inset: 0;
+        background: transparent !important;
+        z-index: 1;
+    }
+
+    .aurora-service-slide img {
+        width: 100%;
+        height: 250px !important;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .aurora-service-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+        color: #fff;
+        text-align: center !important;
+    }
+
+    .aurora-service-prev,
+    .aurora-service-next {
+        background: transparent !important;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 15% !important;
+        font-size: 22px;
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        z-index: 3;
+        transition: all 0.3s ease;
+        padding: 8px 14px;
+    }
+
+    .aurora-service-slider {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+        text-align: center;
+        background: url('https://aurorashipping.net/wp-content/uploads/2025/11/Home-page-0.jpeg') no-repeat center/cover;
+    }
+
+    .aurora-service-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(6, 16, 38, 0.85);
+        z-index: 1;
+    }
+
+    .aurora-service-header {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+
+    .aurora-service-badge {
+        display: inline-block;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 6px;
+        color: #fff;
+        background: transparent;
+        padding: 6px 14px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .aurora-service-heading {
+        font-size: 40px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.3;
+    }
+
+    .aurora-service-carousel {
+        position: relative;
+        width: 85%;
+        margin: 0 auto;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .aurora-service-track {
+        display: flex;
+        transition: transform 0.8s ease-in-out;
+        gap: 30px;
+    }
+
+    .aurora-service-slide {
+        flex: 0 0 calc(33.333% - 20px);
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .aurora-service-slide img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .aurora-service-slide:hover img {
+        transform: scale(1.05);
+    }
+
+    .aurora-service-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+        color: #fff;
+        text-align: left;
+    }
+
+    .aurora-service-caption h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .aurora-learn {
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .aurora-learn:hover {
+        color: #0094ff;
+    }
+
+    .aurora-service-prev,
+    .aurora-service-next {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        font-size: 22px;
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        z-index: 3;
+        transition: all 0.3s ease;
+        padding: 8px 14px;
+    }
+
+    .aurora-service-prev:hover,
+    .aurora-service-next:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .aurora-service-prev {
+        left: 0;
+    }
+
+    .aurora-service-next {
+        right: 0;
+    }
+
+    .aurora-service-btn-wrap {
+        margin-top: 50px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .aurora-service-btn {
+        background: #0094ff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .aurora-service-btn:hover {
+        background: #0076d9;
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 1024px) {
+        .aurora-service-slide {
+            flex: 0 0 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .aurora-service-slide {
+            flex: 0 0 100%;
+        }
+
+        .aurora-service-heading {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<script>
+  
+
+    const track = document.querySelector(".aurora-service-track");
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector(".aurora-service-next");
+    const prevBtn = document.querySelector(".aurora-service-prev");
+
+    let visibleSlides = 3;   // default desktop
+    let slideWidth = 0;
+    let index = 0;
+    let isMoving = false;
+
+ 
+    function updateVisibleSlides() {
+        if (window.innerWidth <= 768) visibleSlides = 1;
+        else if (window.innerWidth <= 1024) visibleSlides = 2;
+        else visibleSlides = 3;
+
+        slideWidth = track.querySelector(".aurora-service-slide").offsetWidth + 30;
+    }
+
+
+    function setupClones() {
+        track.innerHTML = "";
+        slides.forEach(s => track.appendChild(s.cloneNode(true))); // original
+        slides.forEach(s => track.appendChild(s.cloneNode(true))); // second batch
+        slides.forEach(s => track.appendChild(s.cloneNode(true))); // third batch
+    }
+
+    function moveSlider() {
+        track.style.transition = "transform 0.6s ease";
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+
+    function jumpSlider() {
+        track.style.transition = "none";
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+
+    track.addEventListener("transitionend", () => {
+        isMoving = false;
+
+        let total = slides.length * 3;
+
+        if (index >= total - visibleSlides) {
+            index = slides.length;
+            jumpSlider();
+        }
+        else if (index < slides.length) {
+            index = slides.length + (visibleSlides - 1);
+            jumpSlider();
+        }
+    });
+
+   
+    nextBtn.addEventListener("click", () => {
+        if (isMoving) return;
+        isMoving = true;
+        index++;
+        moveSlider();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (isMoving) return;
+        isMoving = true;
+        index--;
+        moveSlider();
+    });
+
+
+    setInterval(() => {
+        if (!isMoving) {
+            isMoving = true;
+            index++;
+            moveSlider();
+        }
+    }, 3000);
+
+ 
+    function initAuroraSlider() {
+        setupClones();
+        updateVisibleSlides();
+
+        index = slides.length;
+        jumpSlider();
+    }
+
+    initAuroraSlider();
+    window.addEventListener("resize", () => {
+        updateVisibleSlides();
+        jumpSlider();
+    });
+</script>
+
+</div>
+</div>
+</div>
+ </div>
+   </div>
+    </div>
+   </div>
+
+
+
+</div>
+
+<!-- faq section -->
+ <style>
+
+h2{
+    text-align: center; 
+    color: #3078f5; 
+    font-size: 25px;
+    font-size: 35px;
+}
+
+.faq-section {
+    padding: 60px 8%;
+    background: #f5f7fa;
+}
+
+/* GRID */
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat( 1fr);
+    padding: 0 50px;
+    gap: 20px;
+}
+
+/* CARD */
+.faq-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq-card:hover {
+    transform: translateY(-3px);
+}
+
+/* QUESTION */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+/* ARROW */
+.faq-arrow {
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* ANSWER */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* ACTIVE */
+.faq-card.active .faq-answer {
+    max-height: 150px;
+}
+
+.faq-card.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<section class="faq-section">
+<h2 ><span style="color: rgb(47, 45, 45);">OUR</span> FAQS</h2>
+    <div class="faq-container">
+
+        <!-- FAQ 1 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                What is hydraulic training?
+                <span class="faq-arrow">+</span>
+                 
+            </div>
+            <div class="faq-answer">
+                    
+                Hydraulic training teaches practical skills related to fluid power systems used in industries.
+             
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Do you provide certification?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes, we provide industry-recognized certification after course completion.
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Is it beginner friendly?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Absolutely, courses are designed for beginners as well as professionals.
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Do you offer placement support?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes, we assist students with job opportunities and industry connections.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function toggleFAQ(card) {
+    document.querySelectorAll(".faq-card").forEach(item => {
+        if (item !== card) {
+            item.classList.remove("active");
+            item.querySelector(".faq-arrow").textContent = "+"; // reset others
+        }
+    });
+
+    card.classList.toggle("active");
+
+    let arrow = card.querySelector(".faq-arrow");
+
+    if (card.classList.contains("active")) {
+        arrow.textContent = "-";
+    } else {
+        arrow.textContent = "+";
+    }
+}
+</script>
+
+
+
+<!-- contact  -->
+<style>
+    .contact-section {
+    padding: 60px 6%;
+    background: #f4f6f9;
+    font-family:  sans-serif;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    align-items: stretch;
+}
+
+/* LEFT SIDE */
+.contact-left {
+    flex: 1;
+    position: relative;
+     background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+      background-image: url('https://aurorashipping.net/wp-content/uploads/2025/12/yatch-agency.png');
+    min-height: 550px;
+}
+
+.contact-overlay {
+    position: absolute;
+    inset: 0;
+   background: linear-gradient(
+    to bottom,
+    rgba(10, 41, 71, 0.9),
+    rgba(2, 31, 58, 1.3)
+);
+}
+
+.contact-content {
+  
+    background-size: cover;
+    left: 0;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 40px;
+}
+
+.contact-content h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.contact-content p {
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 8px;
+    margin-bottom: 18px;
+    border-radius: 9px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: transparent;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    border-radius: 20px;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+/* BUTTON */
+.contact-form button {
+    background: linear-gradient(90deg, #0094ff, #0077cc);
+    border: none;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+}
+
+/* RIGHT SIDE */
+.contact-right {
+    flex: 1;
+}
+
+.contact-right h2 {
+    font-size: 36px;
+    color: #0b2c4d;
+    margin-bottom: 10px;
+}
+
+.contact-right p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-left {
+        min-height: 450px;
+    }
+
+    .contact-content h2 {
+        font-size: 28px;
+    }
+
+    .contact-right h2 {
+        font-size: 26px;
+    }
+}
+</style>
+
+ <section class="contact-section">
+
+  <div class="contact-container">
+
+    <!-- LEFT: FORM -->
+    <div class="contact-left">
+
+      <div class="contact-overlay"></div>
+
+      <div class="contact-content">
+        <h2>Get In Touch!</h2>
+
+        <p>
+          For new projects, dry-dock support, or port calls, contact us for
+          tailored services and reliable vessel solutions support every time.
+        </p>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Name..." required>
+          <input type="email" placeholder="Email..." required>         
+          <textarea placeholder="Message..." rows="4"></textarea>
+
+          <button type="submit">Contact Our Team</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: MAP -->
+    <div class="contact-right">
+
+      <h2>Get In Touch!</h2>
+
+      <p>
+        We respond quickly, work transparently, and focus on long-term
+        partnerships across the maritime value chain.
+      </p>
+
+      <div class="contact-map">
+        <iframe 
+          src="https://maps.google.com/maps?q=Dubai%20Maritime%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          allowfullscreen="">
+        </iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- contact end -->
+
+
+<!-- footer -->
+
+    <footer class="aurora-footer mb-0">
+    <div class="footer-container">
+        <!-- Left Logo Section -->
+        <div class="footer-col footer-brand">
+            <img src="hydraulic-logo.jpeg"
+                alt="Aurora Shipping Logo" class="footer-logo" />
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum recusandae saepe sed. Voluptas inventore laudantium fugit beataasi, 
+                consum provident expedita dignissimos! Nostrum.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href=" ">Home</a></li>
+                <li><a href=" ">About us</a></li>
+                <li><a href=" ">Products</a></li>
+                <li><a href=" ">Services</a></li>              
+                <li><a href=" ">Blogs</a></li>
+                <li><a href=" ">Contact us</a></li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href=" ">Services</a></li>
+                <li><a href=" ">Services2</a></li>
+                <li><a href=" ">Services3</a></li>
+                <li><a href=" ">Services4</a></li>
+                <li><a href=" ">Services5</a></li>
+                <li><a href=" "> Services7</a> </li>
+                <li><a href=" ">Services8</a></li>
+                <li><a href=" ">Services9</a></li>
+            </ul>
+        </div>
+
+        <!-- Explore Our Products -->
+        <div class="footer-col">
+            <h4>Explore Our Products</h4>
+            <ul>
+                <li><a href=" ">product</a></li>
+                <li><a href="">product2</a>
+                </li>
+                <li><a href=" ">product3</a></li>
+                <li><a href=" ">product4</a></li>
+                <li><a href=" ">product5</a></li>
+                <li><a href=" ">product6</a>
+                </li>
+                <li><a href=" ">Explore Other Products</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h4>Contact us</h4>
+            <ul>
+                <li>Phone: <a href="tel:+97190443933">+971 4 244 3933</a></li>
+                <li>Email: <a href="mailto:info@ing.net">info@abhiffd.net</a></li>
+                <li>Head Office:  Lorem ipsum, dolor corrupti,elit illum voluptatibus.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <hr />
+        <p>© Abhi Marketing, All Right Reserved</p>
+    </div>
+</footer>
+
+<style>
+    .aurora-footer {
+        background-color: #061026;
+        color: #fff;
+        font-family: 'Figtree', sans-serif;
+        padding: 70px 8% 1px !important;
+    }
+
+    .aurora-footer {
+        background-color: #061026;
+        color: #fff;
+        font-family: 'Figtree', sans-serif;
+        padding: 70px 8% 30px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
+        gap: 30px;
+    }
+
+
+    .footer-logo {
+        width: 180px;
+        margin-bottom: 15px;
+        background: #fff;
+        border-radius: 10px !important;
+        padding: 0 8px !important;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 18px;
+        font-weight: 700;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #c9d1da;
+        line-height: 1.6;
+    }
+
+    .footer-col ul li a {
+        color: #c9d1da;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+        color: #0094ff;
+    }
+
+    .footer-brand p {
+        font-size: 14px;
+        color: #c9d1da;
+        line-height: 1.6;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .footer-bottom hr {
+        border: 0;
+        height: 1px;
+        background: #3b4a63;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom p {
+        color: #a6b1c2;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .aurora-footer {
+            padding: 60px 6% 30px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin: 0 auto 20px;
+        }
+
+        .footer-col h4 {
+            margin-top: 20px;
+        }
+    }
+</style>
+</body>
+</html>
