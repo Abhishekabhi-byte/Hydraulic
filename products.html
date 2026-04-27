@@ -8,9 +8,9 @@
 <body>
    
 
-    <style>
+   <style>
         body{
-            background: rgb(213, 210, 210);
+            background: whitesmoke;
             font-family: sans-serif;
             font-size: 15px;
             margin: 0px;
@@ -122,7 +122,7 @@
 .dropdown {
     display: none;
     position: absolute;
-    top: 110%;
+   
     background: #fff;
     min-width: 200px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
@@ -214,16 +214,18 @@
 
     <ul class="nav-menu" id="navMenu">
 
-        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="index.html"class="active" style="color: #0094ff;">Home</a></li>
 
         <li class="nav-item"><a href="about-us.html">About Us</a></li>
 
         <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
 
-          <li class="nav-item has-dropdown">
-            <a href="products.html" class="active" style="color: #0094ff;">Products</a>
+
+    <li class="nav-item has-dropdown">
+            <a href="products.html">Products</a>
             <span class="dropdown-arrow">⏷</span>
 
+         
             <ul class="dropdown">
                 <li><a href="products1.html">Products1</a></li>
                 <li><a href="#">Products2</a></li>
@@ -255,11 +257,11 @@
 <div class="backdrop" id="backdrop"></div>
 
 <script>
-
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 const backdrop = document.getElementById("backdrop");
 
+/* MENU TOGGLE */
 menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("menu-open");
     backdrop.classList.toggle("show");
@@ -272,15 +274,26 @@ backdrop.addEventListener("click", () => {
     document.body.classList.remove("no-scroll");
 });
 
-/* DROPDOWN */
-document.querySelectorAll(".dropdown-toggle").forEach(btn => {
-    btn.addEventListener("click", function () {
-        this.parentElement.classList.toggle("open");
+/* ✅ DROPDOWN FIX */
+document.querySelectorAll(".has-dropdown > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+
+        // Only for mobile
+        if (window.innerWidth <= 999) {
+            e.preventDefault(); // stop page open
+
+            const parent = this.parentElement;
+
+            // close other dropdowns
+            document.querySelectorAll(".has-dropdown").forEach(item => {
+                if (item !== parent) item.classList.remove("open");
+            });
+
+            parent.classList.toggle("open");
+        }
     });
 });
-
 </script>
-
 </div>
 
   <!-- header end -->
