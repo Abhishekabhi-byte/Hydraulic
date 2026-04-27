@@ -212,14 +212,14 @@
 
     <ul class="nav-menu" id="navMenu">
 
-        <li class="nav-item"><a href="index.html"class="active" style="color: #0094ff;">Home</a></li>
+        <li class="nav-item"><a href="index.html">Home</a></li>
 
         <li class="nav-item"><a href="about-us.html">About Us</a></li>
 
         <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
 
           <li class="nav-item has-dropdown">
-            <a href="products.html">Products</a>
+            <a href="products.html" class="active" style="color: #0094ff;">Products</a>
             <span class="dropdown-arrow">⏷</span>
 
             <ul class="dropdown">
@@ -403,7 +403,7 @@ document.querySelectorAll(".dropdown-toggle").forEach(btn => {
 
         .btn {
             display: block;
-            width: 100%;
+            width: 70%;
             padding: 10px;
             border-radius: 20px;
             border: none;
@@ -429,6 +429,56 @@ document.querySelectorAll(".dropdown-toggle").forEach(btn => {
         }
 
         .info-table td { padding: 4px 0; }
+
+        .prod-text{
+            padding: 0px 120px;
+        }
+
+       /* ---------- RESPONSIVE FIX ---------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .product-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-column {
+        position: static;
+    }
+
+    .buy-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .prod-text {
+        padding: 0 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 565px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .price-main {
+        font-size: 20px;
+    }
+
+    .prod-text {
+        padding: 0;
+    }
+
+    .product-image {
+        margin-top: 20px;
+    }
+}
     </style>
 
 
@@ -448,7 +498,7 @@ document.querySelectorAll(".dropdown-toggle").forEach(btn => {
           <h1><span style="color: #0094ff;">Product Description</span></h1>
         <h3>VOLTURI Non Scratch Wire  Cloth (Pack of 10), Steel Scrubber for Utensils Cleaning, Multipurpose Wet and Dry Cleaning</h3>
           
-        <p align="justify";>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, accusamus quasi voluptatem ea reiciendis necessitatibus consectetur sit culpa repudiandae asperiores corporis porro quam commodi reprehenderit! Beatae dicta quis dolores temporibus culpa nesciunt officiis exercitationem. Et tenetur ducimus,
+        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, accusamus quasi voluptatem ea reiciendis necessitatibus consectetur sit culpa repudiandae asperiores corporis porro quam commodi reprehenderit! Beatae dicta quis dolores temporibus culpa nesciunt officiis exercitationem. Et tenetur ducimus,
              reprehenderit iure in ipsam harum, beatae, magnam aliquid quas minima quibusdam. Nihil, suscipit?</p>
          <div style="line-height: 1.5;">
           
@@ -477,8 +527,7 @@ document.querySelectorAll(".dropdown-toggle").forEach(btn => {
            
 
            
-            <button class="btn btn-buy"><a href="#">Buy Now</a></button>
-
+          <a href="#" class="btn btn-buy">Buy Now</a>
             <table class="info-table">
                 <tr><td>Ships from</td><td>Parker Group</td></tr>
                 <tr><td>Sold by</td><td>Abhishek</td></tr>
@@ -491,9 +540,9 @@ document.querySelectorAll(".dropdown-toggle").forEach(btn => {
 
 </div>
 
-<div style="padding: 0px 120px;">
+<div class="prod-text">
        <h2><span style="color: #0094ff;">Product Specification</span></h2>
-             <p align="justify";>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus
+             <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus Lorem ipsum dolor sit amet
