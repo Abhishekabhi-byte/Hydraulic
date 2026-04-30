@@ -243,24 +243,24 @@
 
         <li class="nav-item"><a href="index.html"class="active" style="color: #0094ff;">Home</a></li>
 
-        <li class="nav-item"><a href="about-us.html">About Us</a></li>
 
-        <li class="nav-item"><a href="our-clients.html">Our Clients</a></li>
-
-
-    <li class="nav-item has-dropdown">
-            <a href="products.html">Products</a>
+           <li class="nav-item has-dropdown">
+            <a href="">Our Company</a>
             <span class="dropdown-arrow">⏷</span>
 
          
             <ul class="dropdown">
-                <li><a href="products1.html">Products1</a></li>
-                <li><a href="#">Products2</a></li>
-                 <li><a href="#">Products3</a></li>
-                <li><a href="#">Products4</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="our-clients.html">Our Clients</a></li>
+                
             </ul>
         </li>
 
+
+      
+           <li class="nav-item"><a href="products.html">Products</a></li>
+
+  
         <li class="nav-item has-dropdown">
             <a href="services.html">Services</a>
             <span class="dropdown-arrow">⏷</span>
@@ -596,7 +596,7 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
  </div>
 
  <!-- top slider- end -->
-  
+
   <style>
 /* TOP LINE */
 .about-top-line {
@@ -674,7 +674,7 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
     color: #f5eded;
 }
 .about-heading {
-    text-align: left;
+    text-align: center;
     font-size: 38px;
     font-weight: 800;
     color: #052552;
@@ -905,10 +905,10 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
  <section class="text-slide-section">
     <div class="text-slide-track">
         <span class="text-slide-text">
-            AUTHORIZED DISTRIBUTOR OF HEMPEL MARINE AND PROTECTIVE COATINGS
+            RESILIENT INSTITUTE OF HYDEROLIC
         </span>
         <span class="text-slide-text">
-            AUTHORIZED DISTRIBUTOR OF HEMPEL MARINE AND PROTECTIVE COATINGS
+             RESILIENT INSTITUTE OF HYDEROLIC
         </span>
     </div>
     
@@ -931,204 +931,491 @@ io.observe(rightImage);
 </script>
 
 <!-- text-slide-end -->
+ <style>
+    .products-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f5f7fa;
+}
 
-<section class="about-product-section">
-<h2 style="text-align: center; color: rgb(16, 94, 154);"><span style="color: rgb(47, 45, 45);">OUR</span> PRODUCTS</h2>
-    <div class="about-product-container">
+.slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 1290px;
+    margin: auto;
+}
 
-        <!-- LEFT CARD -->
-        <div class="about-product-image-card">
-            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="Hydraulic Cylinder">
+.slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
 
-            <h3 class="about-product-title">Hydraulic Cylinder Repair</h3>
-        </div>
+/* CARD */
+.product-card {
+    min-width: 250px;
+    max-width: 250px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-        <!-- RIGHT CONTENT -->
-        <div class="about-product-content">
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-            <p class="about-product-desc">
-                Hydraulic cylinders are economical to repair and we repair some of the largest.
-                Our new cylinder repair station accommodates units to 16 inches in bore and
-                240 inches in stroke.
-            </p>
+/* BUTTONS */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
 
-            <ul class="about-product-list">
-                <li>All brands and styles of hydraulic and pneumatic cylinders and rams.</li>
-                <li>Cylinders up to 16 inches in bore and 240 inches in stroke.</li>
-                <li>Custom rod ends, chroming and finishing services available.</li>
-                <li>Fast and reliable delivery options.</li>
-            </ul>
- <div class="heroAurora-buttons" style="display:flex; justify-content:right; align-items:right;">
-                <a href="products1.html"><button class="heroAurora-btn-primary">Read
-                         More →</button></a>
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: #0056b3;
+}
+ </style>
+
+<section class="products-section">
+    <h2><span style="color: black;">Our</span> PRODUCTS</h2>
+
+    <div class="slider">
+
+        <button class="prev">&#10094;</button>
+
+        <div class="slider-track" id="sliderTrack">
+
+            <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
             </div>
-        </div>
 
-    </div>
-
-    <br>
-    <div class="about-product-container">
-
-        <!-- LEFT CARD -->
-        <div class="about-product-image-card">
-            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="Hydraulic Cylinder">
-
-            <h3 class="about-product-title">Hydraulic Cylinder Repair</h3>
-        </div>
-
-        <!-- RIGHT CONTENT -->
-        <div class="about-product-content">
-
-            <p class="about-product-desc">
-                Hydraulic cylinders are economical to repair and we repair some of the largest.
-                Our new cylinder repair station accommodates units to 16 inches in bore and
-                240 inches in stroke.
-            </p>
-
-            <ul class="about-product-list">
-                <li>All brands and styles of hydraulic and pneumatic cylinders and rams.</li>
-                <li>Cylinders up to 16 inches in bore and 240 inches in stroke.</li>
-                <li>Custom rod ends, chroming and finishing services available.</li>
-                <li>Fast and reliable delivery options.</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-    <br>
-    <div class="about-product-container">
-
-        <!-- LEFT CARD -->
-        <div class="about-product-image-card">
-            <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png" alt="Hydraulic Cylinder">
-
-            <h3 class="about-product-title">Hydraulic Cylinder Repair</h3>
-        </div>
-
-        <!-- RIGHT CONTENT -->
-        <div class="about-product-content">
-
-            <p class="about-product-desc">
-                Hydraulic cylinders are economical to repair and we repair some of the largest.
-                Our new cylinder repair station accommodates units to 16 inches in bore and
-                240 inches in stroke.
-            </p>
-
-            <ul class="about-product-list">
-                <li>All brands and styles of hydraulic and pneumatic cylinders and rams.</li>
-                <li>Cylinders up to 16 inches in bore and 240 inches in stroke.</li>
-                <li>Custom rod ends, chroming and finishing services available.</li>
-                <li>Fast and reliable delivery options.</li>
-            </ul>
-
-        </div>
-
-    </div>
-    <br>
-
-    
-  <div class="heroAurora-buttons" style="display:flex; justify-content:center; align-items:center;">
-                <a href="products.html"><button class="heroAurora-btn-primary">View
-                         More →</button></a>
+             <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
             </div>
-            
+
+             <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+             <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+        </div>
+
+        <button class="next">&#10095;</button>
+
+    </div>
 </section>
 
+<script>
+const track = document.getElementById("sliderTrack");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let index = 0;
+const cardWidth = 270; // 250 + gap
+
+function updateSlider() {
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+    index++;
+    if (index > track.children.length - 3) {
+        index = 0;
+    }
+    updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+    index--;
+    if (index < 0) {
+        index = track.children.length - 3;
+    }
+    updateSlider();
+});
+
+// AUTO SLIDE
+setInterval(() => {
+    index++;
+    if (index > track.children.length - 3) {
+        index = 0;
+    }
+    updateSlider();
+}, 3000);
+</script>
 
 
 
 <style>
-    .about-product-section {
-    padding: 17px 6%;
-    background: #f5f7fa;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.about-product-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-/* LEFT CARD */
-.about-product-image-card {
-    background: #fff;
-    border-radius: 12px;
+    .aurora-why-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #061026, #0d1f3c);
+    color: #fff;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.aurora-why-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.aurora-why-header {
+    margin-bottom: 60px;
+}
+
+.aurora-why-badge {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.aurora-why-header h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.aurora-why-header p {
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: auto;
+}
+
+.aurora-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.aurora-why-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 30px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.aurora-why-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(0,148,255,0.2));
+    opacity: 0;
     transition: 0.3s;
 }
 
-.about-product-image-card:hover {
-    transform: translateY(-5px);
+.aurora-why-card:hover::before {
+    opacity: 1;
 }
 
-.about-product-image-card img {
-   width: 100%;
-    max-width: 324px;
-    margin-bottom: -24px;
+.aurora-why-card:hover {
+    transform: translateY(-10px);
 }
 
-.about-product-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #0b2c4d;
+.aurora-why-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
 }
 
-/* RIGHT CONTENT */
-.about-product-content {
-    flex: 1.2;
+.aurora-why-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.aurora-why-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .aurora-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .aurora-why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aurora-why-header h2 {
+        font-size: 28px;
+    }
+}
+</style>
+<section class="aurora-why-section">
+    <div class="aurora-why-container">
+
+        <div class="aurora-why-header">
+            <span class="aurora-why-badge">Why Choose Us</span>
+            <h2>Why Resilient Hydraulic & Manufacturing?</h2>
+            <p>Delivering precision engineering, durability, and trusted service across marine and industrial sectors.</p>
+        </div>
+
+        <div class="aurora-why-grid">
+
+            <div class="aurora-why-card">
+                <div class="icon">⚙️</div>
+                <h3>Advanced Engineering</h3>
+                <p>We use cutting-edge technology to deliver precision-built hydraulic and mechanical solutions.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">🛠️</div>
+                <h3>End-to-End Solutions</h3>
+                <p>From design to manufacturing and maintenance, everything is handled under one roof.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">🚢</div>
+                <h3>Marine Expertise</h3>
+                <p>Specialized experience in marine and offshore industries ensures reliable performance.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">⏱️</div>
+                <h3>Timely Delivery</h3>
+                <p>We prioritize deadlines with efficient workflows and a dedicated operations team.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">✅</div>
+                <h3>Quality Assurance</h3>
+                <p>Strict quality checks ensure durability, safety, and long-lasting performance.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">🤝</div>
+                <h3>Customer Commitment</h3>
+                <p>We build long-term relationships through transparency, reliability, and support.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- faq section -->
+ <style>
+
+h2{
+    text-align: center; 
+    color: #3078f5; 
+    font-size: 25px;
+    font-size: 35px;
+}
+
+.faq-section {
+    padding: 17px 8%;
+    background: #f5f7fa;
+}
+
+/* GRID */
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat( 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.faq-card {
     background: #fff;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.about-product-desc {
-    font-size: 15px;
+.faq-card:hover {
+    transform: translateY(-3px);
+}
+
+/* QUESTION */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+/* ARROW */
+.faq-arrow {
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* ANSWER */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
     color: #555;
-    margin-bottom: 20px;
-    line-height: 1.6;
+    margin-top: 10px;
 }
 
-/* LIST */
-.about-product-list {
-    list-style: none;
-    padding: 0;
+/* ACTIVE */
+.faq-card.active .faq-answer {
+    max-height: 150px;
 }
 
-.about-product-list li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 12px;
-    font-size: 15px;
-    color: #333;
-}
-
-.about-product-list li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #0094ff;
-    font-weight: bold;
+.faq-card.active .faq-arrow {
+    transform: rotate(180deg);
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-    .about-product-container {
-        flex-direction: column;
-    }
-
-    .about-product-image-card,
-    .about-product-content {
-        width: 100%;
+@media (max-width: 768px) {
+    .faq-container {
+        grid-template-columns: 1fr;
     }
 }
 </style>
 
-<!-- product-slider-start -->
+<section class="faq-section">
+<h2 ><span style="color: rgb(47, 45, 45);">OUR</span> FAQS</h2>
+    <div class="faq-container">
+
+        <!-- FAQ 1 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                What is hydraulic training?
+                <span class="faq-arrow">+</span>
+                 
+            </div>
+            <div class="faq-answer">
+                    
+                Hydraulic training teaches practical skills related to fluid power systems used in industries.
+             
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Do you provide certification?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes, we provide industry-recognized certification after course completion.
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Is it beginner friendly?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Absolutely, courses are designed for beginners as well as professionals.
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Do you offer placement support?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes, we assist students with job opportunities and industry connections.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function toggleFAQ(card) {
+    document.querySelectorAll(".faq-card").forEach(item => {
+        if (item !== card) {
+            item.classList.remove("active");
+            item.querySelector(".faq-arrow").textContent = "+"; // reset others
+        }
+    });
+
+    card.classList.toggle("active");
+
+    let arrow = card.querySelector(".faq-arrow");
+
+    if (card.classList.contains("active")) {
+        arrow.textContent = "-";
+    } else {
+        arrow.textContent = "+";
+    }
+}
+</script>
+
+
+
+<!-- services-slider-start -->
 <div class="vce-row-container">
     <div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" data-vce-stretch-content="true" id="el-019f8d97" data-vce-do-apply="all el-019f8d97"><div class="vce-content-background-container"></div>
 <div class="vce-row-content" data-vce-element-content="true">
@@ -1144,7 +1431,7 @@ io.observe(rightImage);
     </div>
 
     <div class="aurora-service-header">
-        <div class="aurora-service-badge">Our Products</div>
+        <div class="aurora-service-badge">Our Services</div>
         <h2 class="aurora-service-heading">Canvas of Basic Marine, Logistics &amp; Coating Services<br>Under One Roof
         </h2>
     </div>
@@ -1232,7 +1519,7 @@ io.observe(rightImage);
     </div>
 
     <div class="aurora-service-btn-wrap">
-        <a href="https://aurorashipping.net/services/">
+        <a href="#">
             <button class="aurora-service-btn">Know More</button>
         </a>
     </div>
@@ -1459,20 +1746,32 @@ io.observe(rightImage);
     }
 </style>
 
+
+</div>
+</div>
+</div>
+ </div>
+   </div>
+    </div>
+   </div>
+
+
+
+</div>
+
 <script>
-  
+document.addEventListener("DOMContentLoaded", function () {
 
     const track = document.querySelector(".aurora-service-track");
-    const slides = Array.from(track.children);
     const nextBtn = document.querySelector(".aurora-service-next");
     const prevBtn = document.querySelector(".aurora-service-prev");
 
-    let visibleSlides = 3;   // default desktop
+    let slides = Array.from(track.children);
+    let visibleSlides = 3;
     let slideWidth = 0;
     let index = 0;
     let isMoving = false;
 
- 
     function updateVisibleSlides() {
         if (window.innerWidth <= 768) visibleSlides = 1;
         else if (window.innerWidth <= 1024) visibleSlides = 2;
@@ -1481,12 +1780,17 @@ io.observe(rightImage);
         slideWidth = track.querySelector(".aurora-service-slide").offsetWidth + 30;
     }
 
-
     function setupClones() {
+        const originalSlides = Array.from(track.children);
+
         track.innerHTML = "";
-        slides.forEach(s => track.appendChild(s.cloneNode(true))); // original
-        slides.forEach(s => track.appendChild(s.cloneNode(true))); // second batch
-        slides.forEach(s => track.appendChild(s.cloneNode(true))); // third batch
+
+        originalSlides.forEach(s => track.appendChild(s.cloneNode(true)));
+        originalSlides.forEach(s => track.appendChild(s.cloneNode(true)));
+        originalSlides.forEach(s => track.appendChild(s.cloneNode(true)));
+
+        // ✅ update slides AFTER cloning
+        slides = Array.from(track.children);
     }
 
     function moveSlider() {
@@ -1494,29 +1798,25 @@ io.observe(rightImage);
         track.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
-
     function jumpSlider() {
         track.style.transition = "none";
         track.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
-
     track.addEventListener("transitionend", () => {
         isMoving = false;
 
-        let total = slides.length * 3;
+        let total = slides.length;
 
         if (index >= total - visibleSlides) {
-            index = slides.length;
+            index = Math.floor(total / 3);
             jumpSlider();
-        }
-        else if (index < slides.length) {
-            index = slides.length + (visibleSlides - 1);
+        } else if (index < Math.floor(total / 3)) {
+            index = Math.floor(total / 3) + (visibleSlides - 1);
             jumpSlider();
         }
     });
 
-   
     nextBtn.addEventListener("click", () => {
         if (isMoving) return;
         isMoving = true;
@@ -1531,7 +1831,6 @@ io.observe(rightImage);
         moveSlider();
     });
 
-
     setInterval(() => {
         if (!isMoving) {
             isMoving = true;
@@ -1540,185 +1839,89 @@ io.observe(rightImage);
         }
     }, 3000);
 
- 
     function initAuroraSlider() {
         setupClones();
         updateVisibleSlides();
 
-        index = slides.length;
+        index = Math.floor(slides.length / 3);
         jumpSlider();
     }
 
     initAuroraSlider();
+
     window.addEventListener("resize", () => {
         updateVisibleSlides();
         jumpSlider();
     });
+
+});
 </script>
 
-</div>
-</div>
-</div>
- </div>
-   </div>
-    </div>
-   </div>
 
 
 
-</div>
-
-<!-- faq section -->
- <style>
-
-h2{
-    text-align: center; 
-    color: #3078f5; 
-    font-size: 25px;
-    font-size: 35px;
-}
-
-.faq-section {
-    padding: 60px 8%;
-    background: #f5f7fa;
-}
-
-/* GRID */
-.faq-container {
-    display: grid;
-    grid-template-columns: repeat( 1fr);
-    gap: 20px;
-}
-
-/* CARD */
-.faq-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.faq-card:hover {
-    transform: translateY(-3px);
-}
-
-/* QUESTION */
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-}
-
-/* ARROW */
-.faq-arrow {
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-/* ANSWER */
-.faq-answer {
-    max-height: 0;
+  <style>
+    .aurora-logo-slider {
     overflow: hidden;
-    transition: 0.3s ease;
-    color: #555;
-    margin-top: 10px;
+    padding: 10px 0;
 }
 
-/* ACTIVE */
-.faq-card.active .faq-answer {
-    max-height: 150px;
+.aurora-logo-track {
+    display: flex;
+    width: max-content;
+    animation: logoScroll 25s linear infinite;
 }
 
-.faq-card.active .faq-arrow {
-    transform: rotate(180deg);
+.aurora-logo-slide {
+    flex: 0 0 auto;
+    width: 180px;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .faq-container {
-        grid-template-columns: 1fr;
+.aurora-logo-slide img {
+    max-width: 100%;
+    max-height: 80px;
+    transition: 0.3s;
+}
+
+.aurora-logo-slide img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* animation */
+@keyframes logoScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
     }
 }
-</style>
-
-<section class="faq-section">
-<h2 ><span style="color: rgb(47, 45, 45);">OUR</span> FAQS</h2>
-    <div class="faq-container">
-
-        <!-- FAQ 1 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                What is hydraulic training?
-                <span class="faq-arrow">+</span>
-                 
-            </div>
-            <div class="faq-answer">
-                    
-                Hydraulic training teaches practical skills related to fluid power systems used in industries.
-             
-            </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                Do you provide certification?
-                <span class="faq-arrow">+</span>
-            </div>
-            <div class="faq-answer">
-                Yes, we provide industry-recognized certification after course completion.
-            </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                Is it beginner friendly?
-                <span class="faq-arrow">+</span>
-            </div>
-            <div class="faq-answer">
-                Absolutely, courses are designed for beginners as well as professionals.
-            </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                Do you offer placement support?
-                <span class="faq-arrow">+</span>
-            </div>
-            <div class="faq-answer">
-                Yes, we assist students with job opportunities and industry connections.
-            </div>
-        </div>
-
+  </style>
+<section class="aurora-logo-slider">
+    <h2>Our<span style="color: #061026;"> Partners</span></h2>
+    <div class="aurora-logo-track">
+        <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 1"></div>
+        <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 2"></div>
+        <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 3"></div>
+        <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 4"></div>
+        <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 5"></div>
+        <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 6"></div>
     </div>
-
 </section>
-
 <script>
-function toggleFAQ(card) {
-    document.querySelectorAll(".faq-card").forEach(item => {
-        if (item !== card) {
-            item.classList.remove("active");
-            item.querySelector(".faq-arrow").textContent = "+"; // reset others
-        }
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".aurora-logo-track");
 
-    card.classList.toggle("active");
-
-    let arrow = card.querySelector(".faq-arrow");
-
-    if (card.classList.contains("active")) {
-        arrow.textContent = "-";
-    } else {
-        arrow.textContent = "+";
-    }
-}
+    // duplicate logos for seamless infinite scroll
+    track.innerHTML += track.innerHTML;
+});
 </script>
+
 
 
 
