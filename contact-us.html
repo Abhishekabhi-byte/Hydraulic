@@ -420,11 +420,13 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="flex flex-col">
                                 <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Identity</label>
-                                <input type="text" placeholder="Name" class="contact-m-input px-5 py-4 rounded-xl">
+                               
+                                 <input name="name" type="text" placeholder="Name" class="contact-m-input px-5 py-4 rounded-xl" required>
+      
                             </div>
                             <div class="flex flex-col">
                                 <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Correspondence</label>
-                                <input type="email" placeholder="Email" class="contact-m-input px-5 py-4 rounded-xl">
+                                  <input name="email" type="email" placeholder="Email" class="contact-m-input px-5 py-4 rounded-xl" required>
                             </div>
                         </div>
 

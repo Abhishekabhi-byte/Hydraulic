@@ -931,493 +931,12 @@ io.observe(rightImage);
 </script>
 
 <!-- text-slide-end -->
- <style>
-    .products-section {
-    padding: 40px 20px;
-    text-align: center;
-    background: #f5f7fa;
-}
-
-.slider {
-    position: relative;
-    overflow: hidden;
-    max-width: 1290px;
-    margin: auto;
-}
-
-.slider-track {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s ease;
-}
-
-/* CARD */
-.product-card {
-    min-width: 250px;
-    max-width: 250px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* BUTTONS */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.prev:hover, .next:hover {
-    background: #0056b3;
-}
- </style>
-
-<section class="products-section">
-    <h2><span style="color: black;">Our</span> PRODUCTS</h2>
-
-    <div class="slider">
-
-        <button class="prev">&#10094;</button>
-
-        <div class="slider-track" id="sliderTrack">
-
-            <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-             <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-             <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-             <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-              <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-              <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-              <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-              <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-              <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-
-              <div class="product-card">
-                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
-                <h3>Product 1</h3>
-                <a href="products1.html">View →</a>
-            </div>
-
-        </div>
-
-        <button class="next">&#10095;</button>
-
-    </div>
-</section>
-
-<script>
-const track = document.getElementById("sliderTrack");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-
-let index = 0;
-const cardWidth = 270; // 250 + gap
-
-function updateSlider() {
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-}
-
-nextBtn.addEventListener("click", () => {
-    index++;
-    if (index > track.children.length - 3) {
-        index = 0;
-    }
-    updateSlider();
-});
-
-prevBtn.addEventListener("click", () => {
-    index--;
-    if (index < 0) {
-        index = track.children.length - 3;
-    }
-    updateSlider();
-});
-
-// AUTO SLIDE
-setInterval(() => {
-    index++;
-    if (index > track.children.length - 3) {
-        index = 0;
-    }
-    updateSlider();
-}, 3000);
-</script>
-
-
-
-<style>
-    .aurora-why-section {
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #061026, #0d1f3c);
-    color: #fff;
-    text-align: center;
-}
-
-.aurora-why-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.aurora-why-header {
-    margin-bottom: 60px;
-}
-
-.aurora-why-badge {
-    display: inline-block;
-    border: 1px solid rgba(255,255,255,0.4);
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.aurora-why-header h2 {
-    font-size: 38px;
-    margin-bottom: 10px;
-}
-
-.aurora-why-header p {
-    color: rgba(255,255,255,0.7);
-    max-width: 600px;
-    margin: auto;
-}
-
-.aurora-why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.aurora-why-card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 16px;
-    padding: 30px;
-    transition: 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.aurora-why-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, transparent, rgba(0,148,255,0.2));
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.aurora-why-card:hover::before {
-    opacity: 1;
-}
-
-.aurora-why-card:hover {
-    transform: translateY(-10px);
-}
-
-.aurora-why-card .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.aurora-why-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.aurora-why-card p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.75);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .aurora-why-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .aurora-why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .aurora-why-header h2 {
-        font-size: 28px;
-    }
-}
-</style>
-<section class="aurora-why-section">
-    <div class="aurora-why-container">
-
-        <div class="aurora-why-header">
-            <span class="aurora-why-badge">Why Choose Us</span>
-            <h2>Why Resilient Hydraulic & Manufacturing?</h2>
-            <p>Delivering precision engineering, durability, and trusted service across marine and industrial sectors.</p>
-        </div>
-
-        <div class="aurora-why-grid">
-
-            <div class="aurora-why-card">
-                <div class="icon">⚙️</div>
-                <h3>Advanced Engineering</h3>
-                <p>We use cutting-edge technology to deliver precision-built hydraulic and mechanical solutions.</p>
-            </div>
-
-            <div class="aurora-why-card">
-                <div class="icon">🛠️</div>
-                <h3>End-to-End Solutions</h3>
-                <p>From design to manufacturing and maintenance, everything is handled under one roof.</p>
-            </div>
-
-            <div class="aurora-why-card">
-                <div class="icon">🚢</div>
-                <h3>Marine Expertise</h3>
-                <p>Specialized experience in marine and offshore industries ensures reliable performance.</p>
-            </div>
-
-            <div class="aurora-why-card">
-                <div class="icon">⏱️</div>
-                <h3>Timely Delivery</h3>
-                <p>We prioritize deadlines with efficient workflows and a dedicated operations team.</p>
-            </div>
-
-            <div class="aurora-why-card">
-                <div class="icon">✅</div>
-                <h3>Quality Assurance</h3>
-                <p>Strict quality checks ensure durability, safety, and long-lasting performance.</p>
-            </div>
-
-            <div class="aurora-why-card">
-                <div class="icon">🤝</div>
-                <h3>Customer Commitment</h3>
-                <p>We build long-term relationships through transparency, reliability, and support.</p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- faq section -->
- <style>
-
-h2{
-    text-align: center; 
-    color: #3078f5; 
-    font-size: 25px;
-    font-size: 35px;
-}
-
-.faq-section {
-    padding: 17px 8%;
-    background: #f5f7fa;
-}
-
-/* GRID */
-.faq-container {
-    display: grid;
-    grid-template-columns: repeat( 1fr);
-    gap: 20px;
-}
-
-/* CARD */
-.faq-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.faq-card:hover {
-    transform: translateY(-3px);
-}
-
-/* QUESTION */
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-}
-
-/* ARROW */
-.faq-arrow {
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-/* ANSWER */
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.3s ease;
-    color: #555;
-    margin-top: 10px;
-}
-
-/* ACTIVE */
-.faq-card.active .faq-answer {
-    max-height: 150px;
-}
-
-.faq-card.active .faq-arrow {
-    transform: rotate(180deg);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .faq-container {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
-
-<section class="faq-section">
-<h2 ><span style="color: rgb(47, 45, 45);">OUR</span> FAQS</h2>
-    <div class="faq-container">
-
-        <!-- FAQ 1 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                What is hydraulic training?
-                <span class="faq-arrow">+</span>
-                 
-            </div>
-            <div class="faq-answer">
-                    
-                Hydraulic training teaches practical skills related to fluid power systems used in industries.
-             
-            </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                Do you provide certification?
-                <span class="faq-arrow">+</span>
-            </div>
-            <div class="faq-answer">
-                Yes, we provide industry-recognized certification after course completion.
-            </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                Is it beginner friendly?
-                <span class="faq-arrow">+</span>
-            </div>
-            <div class="faq-answer">
-                Absolutely, courses are designed for beginners as well as professionals.
-            </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-card" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-                Do you offer placement support?
-                <span class="faq-arrow">+</span>
-            </div>
-            <div class="faq-answer">
-                Yes, we assist students with job opportunities and industry connections.
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<script>
-function toggleFAQ(card) {
-    document.querySelectorAll(".faq-card").forEach(item => {
-        if (item !== card) {
-            item.classList.remove("active");
-            item.querySelector(".faq-arrow").textContent = "+"; // reset others
-        }
-    });
-
-    card.classList.toggle("active");
-
-    let arrow = card.querySelector(".faq-arrow");
-
-    if (card.classList.contains("active")) {
-        arrow.textContent = "-";
-    } else {
-        arrow.textContent = "+";
-    }
-}
-</script>
-
-
 
 <!-- services-slider-start -->
 <div class="vce-row-container">
-    <div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" data-vce-stretch-content="true" id="el-019f8d97" data-vce-do-apply="all el-019f8d97"><div class="vce-content-background-container"></div>
+    <div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" data-vce-stretch-content="true" id="el-019f8d97" data-vce-do-apply="all el-019f8d97">
+        <div class="vce-content-background-container">
+        </div>
 <div class="vce-row-content" data-vce-element-content="true">
     <div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-cff547fc">
         <div class="vce-col-inner" data-vce-do-apply="border margin background  el-cff547fc">
@@ -1859,7 +1378,496 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+<!-- why-choose-us -->
 
+<style>
+    .aurora-why-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #061026, #0d1f3c);
+    color: #fff;
+    text-align: center;
+}
+
+.aurora-why-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.aurora-why-header {
+    margin-bottom: 60px;
+}
+
+.aurora-why-badge {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.aurora-why-header h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.aurora-why-header p {
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: auto;
+}
+
+.aurora-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.aurora-why-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 30px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.aurora-why-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(0,148,255,0.2));
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.aurora-why-card:hover::before {
+    opacity: 1;
+}
+
+.aurora-why-card:hover {
+    transform: translateY(-10px);
+}
+
+.aurora-why-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.aurora-why-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.aurora-why-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .aurora-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .aurora-why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aurora-why-header h2 {
+        font-size: 28px;
+    }
+}
+</style>
+<section class="aurora-why-section">
+    <div class="aurora-why-container">
+
+        <div class="aurora-why-header">
+            <span class="aurora-why-badge">Why Choose Us</span>
+            <h2>Why Resilient Hydraulic & Manufacturing?</h2>
+            <p>Delivering precision engineering, durability, and trusted service across marine and industrial sectors.</p>
+        </div>
+
+        <div class="aurora-why-grid">
+
+            <div class="aurora-why-card">
+                <div class="icon">⚙️</div>
+                <h3>Advanced Engineering</h3>
+                <p>We use cutting-edge technology to deliver precision-built hydraulic and mechanical solutions.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">🛠️</div>
+                <h3>End-to-End Solutions</h3>
+                <p>From design to manufacturing and maintenance, everything is handled under one roof.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">🚢</div>
+                <h3>Marine Expertise</h3>
+                <p>Specialized experience in marine and offshore industries ensures reliable performance.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">⏱️</div>
+                <h3>Timely Delivery</h3>
+                <p>We prioritize deadlines with efficient workflows and a dedicated operations team.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">✅</div>
+                <h3>Quality Assurance</h3>
+                <p>Strict quality checks ensure durability, safety, and long-lasting performance.</p>
+            </div>
+
+            <div class="aurora-why-card">
+                <div class="icon">🤝</div>
+                <h3>Customer Commitment</h3>
+                <p>We build long-term relationships through transparency, reliability, and support.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+ <style>
+    .products-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f5f7fa;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 1290px;
+    margin: auto;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+/* CARD */
+.product-card {
+    min-width: 250px;
+    max-width: 250px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* BUTTONS */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: #0056b3;
+}
+ </style>
+
+<section class="products-section">
+    <h2><span style="color: black;">Our</span> PRODUCTS</h2>
+
+    <div class="slider">
+
+        <button class="prev">&#10094;</button>
+
+        <div class="slider-track" id="sliderTrack">
+
+            <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+             <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+             <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+             <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+
+              <div class="product-card">
+                <img src="https://rexrothdistributor.in/wp-content/uploads/2022/06/internal-gear-pumps-16x9_640x360-removebg-preview.png">
+                <h3>Product 1</h3>
+                <a href="products1.html">View →</a>
+            </div>
+
+        </div>
+
+        <button class="next">&#10095;</button>
+
+    </div>
+</section>
+
+<script>
+const track = document.getElementById("sliderTrack");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let index = 0;
+const cardWidth = 270; // 250 + gap
+
+function updateSlider() {
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+    index++;
+    if (index > track.children.length - 3) {
+        index = 0;
+    }
+    updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+    index--;
+    if (index < 0) {
+        index = track.children.length - 3;
+    }
+    updateSlider();
+});
+
+// AUTO SLIDE
+setInterval(() => {
+    index++;
+    if (index > track.children.length - 3) {
+        index = 0;
+    }
+    updateSlider();
+}, 3000);
+</script>
+
+
+
+
+<!-- faq section -->
+ <style>
+
+h2{
+    text-align: center; 
+    color: #3078f5; 
+    font-size: 25px;
+    font-size: 35px;
+}
+
+.faq-section {
+    padding: 17px 8%;
+    background: #f5f7fa;
+}
+
+/* GRID */
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat( 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.faq-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq-card:hover {
+    transform: translateY(-3px);
+}
+
+/* QUESTION */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+/* ARROW */
+.faq-arrow {
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* ANSWER */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* ACTIVE */
+.faq-card.active .faq-answer {
+    max-height: 150px;
+}
+
+.faq-card.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<section class="faq-section">
+<h2 ><span style="color: rgb(47, 45, 45);">OUR</span> FAQS</h2>
+    <div class="faq-container">
+
+        <!-- FAQ 1 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                What is hydraulic training?
+                <span class="faq-arrow">+</span>
+                 
+            </div>
+            <div class="faq-answer">
+                    
+                Hydraulic training teaches practical skills related to fluid power systems used in industries.
+             
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Do you provide certification?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes, we provide industry-recognized certification after course completion.
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Is it beginner friendly?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Absolutely, courses are designed for beginners as well as professionals.
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-card" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                Do you offer placement support?
+                <span class="faq-arrow">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes, we assist students with job opportunities and industry connections.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function toggleFAQ(card) {
+    document.querySelectorAll(".faq-card").forEach(item => {
+        if (item !== card) {
+            item.classList.remove("active");
+            item.querySelector(".faq-arrow").textContent = "+"; // reset others
+        }
+    });
+
+    card.classList.toggle("active");
+
+    let arrow = card.querySelector(".faq-arrow");
+
+    if (card.classList.contains("active")) {
+        arrow.textContent = "-";
+    } else {
+        arrow.textContent = "+";
+    }
+}
+</script>
+
+
+
+
+<!-- logo slider -->
   <style>
     .aurora-logo-slider {
     overflow: hidden;
