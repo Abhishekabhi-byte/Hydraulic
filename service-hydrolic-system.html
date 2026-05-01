@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorized Parker Distributor | Precision Engineering</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+
+
+
+   
+        <!-- header start -->
+    <style>
+
+/* HEADER TOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(90deg, #0046c2, #0094ff);
+    align-items: center;
+}
+
+
+.header-translate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 18px 5%;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-logo img {
+   height: 61px;
+    width: 190px;
+    transition: 0.3s;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline effect */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: 0.3s;
+}
+
+.nav-item a:hover::after {
+    width: 65%;
+}
+
+/* ACTIVE */
+.active {
+    font-weight: 600;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* DROPDOWN */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+   
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 900px) {
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 999px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 60px 20px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.menu-open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: none;
+        box-shadow: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+/* BACKDROP */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+</style>
+
+
+<div class="main-wrapper">
+
+<!-- HEADER -->
+<div class="header-top">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="navbar-logo">
+        <img src="hydraulic-logo.jpeg">
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item"><a href="index.html">Home</a></li>
+
+
+           <li class="nav-item has-dropdown">
+            <a href="">Our Company</a>
+            <span class="dropdown-arrow">⏷</span>
+
+         
+            <ul class="dropdown">
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="our-clients.html">Our Clients</a></li>
+                
+            </ul>
+        </li>
+
+
+      
+  <li class="nav-item"><a href="products.html">Products</a></li>
+
+  
+        <li class="nav-item has-dropdown">
+            <a href="" class="active" style="color: #0094ff;">Services</a>
+            <span class="dropdown-arrow">⏷</span>
+
+            <ul class="dropdown">
+                <li><a href="service-parker-dist.html">Parker Distributor</a></li>
+                <li><a href="service-reconditioning-hydrolic.html">Reconditioning <br>Hydrolic</a></li>
+                 <li><a href="service-hydrolic-system.html">Hydrolic System</a></li>
+                <li><a href="service-eggnament.html">Eggnament Service</a></li>
+            </ul>
+        </li>
+
+           <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
+
+        <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const backdrop = document.getElementById("backdrop");
+
+/* MENU TOGGLE */
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("menu-open");
+    backdrop.classList.toggle("show");
+    document.body.classList.toggle("no-scroll");
+});
+
+backdrop.addEventListener("click", () => {
+    navMenu.classList.remove("menu-open");
+    backdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+});
+
+/* ✅ DROPDOWN FIX */
+document.querySelectorAll(".has-dropdown > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+
+        // Only for mobile
+        if (window.innerWidth <= 999) {
+            e.preventDefault(); // stop page open
+
+            const parent = this.parentElement;
+
+            // close other dropdowns
+            document.querySelectorAll(".has-dropdown").forEach(item => {
+                if (item !== parent) item.classList.remove("open");
+            });
+
+            parent.classList.toggle("open");
+        }
+    });
+});
+</script>
+</div>
+  <!-- header end -->
+
+
+    
+
+    <style>
+        :root {
+            --parker-gold: #0094ff;
+            --parker-dark: #222222;
+            --parker-grey: #f4f4f4;
+            --text-main: #333;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body { background-color: var(--parker-grey); color: var(--text-main); line-height: 1.6; }
+
+       
+
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; }
+
+        /* Services Grid */
+        .section-title { text-align: center; margin: 50px 0 30px; font-size: 2rem; }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--parker-gold);
+        }
+
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i { margin-bottom: 15px; color: var(--parker-dark); }
+
+        /* Product Gallery */
+        .filter-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            margin: 5px;
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--parker-gold);
+            color: var(--parker-dark);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 5% 50px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-info { padding: 20px; }
+        .product-cat { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+        .product-info h3 { margin: 5px 0 15px; }
+
+        .btn-quote {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--parker-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: var(--parker-dark);
+            color: white;
+            padding: 50px 5%;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+ 
+    <header class="hero">
+        <h1><span style="color: #0094ff;">Hydraulic System </span>  </h1>
+        <p>We provide end-to-end Hydraulic System Services, covering everything from design and assembly to fabrication and 
+            after-sales support. Our solutions are tailored to meet the specific needs of industrial applications, ensuring reliability, efficiency, and long-term performance. </p>
+
+    </header>
+
+    <section id="services">
+        <h2 class="section-title">Expert Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i data-lucide="settings-2" size="48"></i>
+                <h3>Custom Assembly</h3>
+                <p>Tailored hose assemblies and manifold kits designed to your exact specs.</p>
+            </div>
+            <div class="service-card">
+                <i data-lucide="wrench" size="48"></i>
+                <h3>On-Site Repair</h3>
+                <p>24/7 emergency repair and maintenance for hydraulic systems.</p>
+            </div>
+            <div class="service-card">
+                <i data-lucide="shield-check" size="48"></i>
+                <h3>Quality Testing</h3>
+                <p>Pressure testing and certification for all motion control components.</p>
+            </div>
+             <div class="service-card">
+                <i data-lucide="settings-2" size="48"></i>
+                <h3>Custom Assembly</h3>
+                <p>Tailored hose assemblies and manifold kits designed to your exact specs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">Our Featured Products</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('hydraulics')">Hydraulics</button>
+            <button class="filter-btn" onclick="filterProducts('pneumatics')">Pneumatics</button>
+            <button class="filter-btn" onclick="filterProducts('filtration')">Filtration</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="hydraulics">
+                <div class="product-img">Piston Pump Series</div>
+                <div class="product-info">
+                    <span class="product-cat">Hydraulics</span>
+                    <h3>PVPlus Axial Piston Pump</h3>
+                    <p>High pressure, low noise industrial pump solutions.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+              <div class="product-card" data-category="hydraulics">
+                <div class="product-img">Piston Pump Series</div>
+                <div class="product-info">
+                    <span class="product-cat">Hydraulics</span>
+                    <h3>PVPlus Axial Piston Pump</h3>
+                    <p>High pressure, low noise industrial pump solutions.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+             <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+
+             <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+             <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-category="filtration">
+                <div class="product-img">Fuel Filter</div>
+                <div class="product-info">
+                    <span class="product-cat">Filtration</span>
+                    <h3>Racor Fuel Filter Water Separator</h3>
+                    <p>Maximum engine protection from water and debris.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Product Filter Logic
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update Active Button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && btn.innerText === 'All Products')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Filter Cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    
+
+<!-- footer -->
+
+    <footer class="aurora-footer mb-0">
+    <div class="footer-container">
+        <!-- Left Logo Section -->
+        <div class="footer-col footer-brand">
+            <img src="hydraulic-logo.jpeg"
+                alt="Aurora Shipping Logo" class="footer-logo" />
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum recusandae saepe sed. Voluptas inventore laudantium fugit beataasi, 
+                consum provident expedita dignissimos! Nostrum.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="service-parker-dist.html">Services</a></li>              
+                <li><a href=" ">Blogs</a></li>
+                <li><a href="contact-us.html">Contact us</a></li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                 <li><a href="service-parker-dist.html">Parker Distributor</a></li>
+                <li><a href="service-reconditioning-hydrolic.html">Reconditioning <br>Hydrolic</a></li>
+                 <li><a href="service-hydrolic-system.html">Hydrolic System</a></li>
+                <li><a href="service-eggnament.html">Eggnament</a></li>
+            </ul>
+        </div>
+
+        <!-- Explore Our Products -->
+        <div class="footer-col">
+            <h4>Explore Our Products</h4>
+            <ul>
+                <li><a href=" ">product</a></li>
+                <li><a href="">product2</a></li>
+                <li><a href=" ">product3</a></li>               
+                <li><a href=" ">Explore Other Products</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h4>Contact us</h4>
+            <ul>
+                <li>Phone: <a href="tel:+97190443933">+971 4 244 3933</a></li>
+                <li>Email: <a href="mailto:info@ing.net">info@abhiffd.net</a></li>
+                <li>Head Office:  Lorem ipsum, dolor corrupti,elit illum voluptatibus.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <hr />
+        <p>© Raj Digital Marketing, All Right Reserved</p>
+    </div>
+</footer>
+
+<style>
+    .aurora-footer {
+        background-color: #061026;
+        color: #fff;
+        font-family: 'Figtree', sans-serif;
+        padding: 70px 8% 1px !important;
+    }
+
+    .aurora-footer {
+        background-color: #061026;
+        color: #fff;
+        font-family: 'Figtree', sans-serif;
+        padding: 70px 8% 30px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        width: 180px;
+        margin-bottom: 15px;
+        background: #fff;
+        border-radius: 10px !important;
+        padding: 0 8px !important;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 18px;
+        font-weight: 700;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #c9d1da;
+        line-height: 1.6;
+    }
+
+    .footer-col ul li a {
+        color: #c9d1da;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+        color: #0094ff;
+    }
+
+    .footer-brand p {
+        font-size: 14px;
+        color: #c9d1da;
+        line-height: 1.6;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .footer-bottom hr {
+        border: 0;
+        height: 1px;
+        background: #3b4a63;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom p {
+        color: #a6b1c2;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .aurora-footer {
+            padding: 60px 6% 30px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin: 0 auto 20px;
+        }
+
+        .footer-col h4 {
+            margin-top: 20px;
+        }
+    }
+</style>
+
+
+</body>
+</html>

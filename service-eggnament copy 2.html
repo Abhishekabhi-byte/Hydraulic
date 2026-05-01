@@ -3,23 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <title>Contact Us | </title>
+    <title>Authorized Parker Distributor | Precision Engineering</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
 
 
-    
-    <style>
-        body{
-            background: whitesmoke;
-            font-family: sans-serif;
-            font-size: 15px;
-            margin: 0px;
-            padding: 0px;
-        }
-    </style>
-   
 
    
         <!-- header start -->
@@ -237,7 +224,7 @@
 
   
         <li class="nav-item has-dropdown">
-            <a href="">Services</a>
+            <a href="" class="active" style="color: #0094ff;">Services</a>
             <span class="dropdown-arrow">⏷</span>
 
             <ul class="dropdown">
@@ -250,7 +237,7 @@
 
            <li class="nav-item"><a href="internship-training.html">Internship/Training</a></li>
 
-        <li class="nav-item"><a href="contact-us.html" class="active" style="color: #0094ff;">Contact</a></li>
+        <li class="nav-item"><a href="contact-us.html">Contact</a></li>
 
     </ul>
 
@@ -299,168 +286,285 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
 </div>
   <!-- header end -->
 
+
+    
+
     <style>
         :root {
-            --contact-m-sky: #38bdf8; /* Sky 400 */
-            --contact-m-deep: #0ea5e9; /* Sky 500 */
-            --contact-m-black: #000000;
-            --contact-m-card-bg: #0a0a0a;
+            --parker-gold: #0094ff;
+            --parker-dark: #222222;
+            --parker-grey: #f4f4f4;
+            --text-main: #333;
+            --white: #ffffff;
         }
 
-        .contact-m-body {
-            background-color: whitesmoke;
-            color: #0ea5e9;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body { background-color: var(--parker-grey); color: var(--text-main); line-height: 1.6; }
+
+       
+
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 5%;
+            text-align: center;
         }
 
-        .contact-m-glass {
-            background: white;
-            border: 1px solid rgba(56, 189, 248, 0.1);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; }
+
+        /* Services Grid */
+        .section-title { text-align: center; margin: 50px 0 30px; font-size: 2rem; }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
         }
 
-        .contact-m-glass:hover {
-            border-color: var(--contact-m-sky);
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
-            transform: translateY(-5px);
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--parker-gold);
         }
 
-        .contact-m-input {
-            background: #ffffff;
-            border: 1px solid #222222;
-            color: #0ea5e9;
-            transition: all 0.3s ease;
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i { margin-bottom: 15px; color: var(--parker-dark); }
+
+        /* Product Gallery */
+        .filter-container {
+            text-align: center;
+            margin: 40px 0;
         }
 
-        .contact-m-input:focus {
-            outline: none;
-            border-color: var(--contact-m-sky);
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
-            background: #050505;
+        .filter-btn {
+            padding: 10px 25px;
+            margin: 5px;
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .contact-m-sky-gradient {
-            background: linear-gradient(135deg, #0ea5e9 0%, var(--contact-m-sky) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--parker-gold);
+            color: var(--parker-dark);
         }
 
-        .contact-m-btn {
-            background: var(--contact-m-sky);
-            color: #ffffff;
-            transition: all 0.3s ease;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 5% 50px;
         }
 
-        .contact-m-btn:hover {
-            background: #0a0a0a;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
-            transform: scale(1.02);
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* Animated Sky Glows */
-        .contact-m-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            z-index: -1;
-            opacity: 0.4;
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+        .product-info { padding: 20px; }
+        .product-cat { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+        .product-info h3 { margin: 5px 0 15px; }
+
+        .btn-quote {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--parker-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+       
     </style>
+
 </head>
-<body class="contact-m-body font-sans antialiased">
+<body>
 
-    <div class="relative min-h-screen py-20 px-6 overflow-hidden">
-        <div class="contact-m-orb w-96 h-96 bg-sky-600 top-[-10%] left-[-5%]"></div>
-        <div class="contact-m-orb w-80 h-80 bg-sky-900 bottom-[-5%] right-[-5%]"></div>
+ 
+    <header class="hero">
+        <h1> Engineering & <span style="color: #0094ff;">Engagement Services</span>  </h1>
+        <p>Engineering & Engagement Services (AMC)
 
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase">
-                    Connect <span class="contact-m-sky-gradient">With Us</span>
-                </h1>
-                <p class="text-slate-500 text-lg max-w-xl mx-auto">
-                    Let’s discuss your next project. We combine environmental expertise with sky-high technical ambition.
-                </p>
+We offer comprehensive Engineering Engagement Services designed to ensure the smooth operation, maintenance, 
+and long-term reliability of hydraulic systems. Our Annual Maintenance Contracts (AMC) 
+provide continuous support, minimizing downtime and maximizing performance. </p>
+
+    </header>
+
+    <section id="services">
+        <h2 class="section-title">Expert Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i data-lucide="settings-2" size="48"></i>
+                <h3>Custom Assembly</h3>
+                <p>Tailored hose assemblies and manifold kits designed to your exact specs.</p>
             </div>
-
-            <div class="grid lg:grid-cols-5 gap-8">
-                
-                <div class="lg:col-span-2 space-y-4">
-                    <div class="contact-m-glass p-8 rounded-3xl">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-10 h-10 rounded-full bg-sky-500/10 flex items-center justify-center text-sky-400">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <h4 class="font-bold uppercase tracking-widest text-sm">Global HQ</h4>
-                        </div>
-                        <p class="text-slate-400 leading-relaxed">
-                            Exchequer Court, 33 St Mary Axe,<br> London, United Kingdom
-                        </p>
-                    </div>
-
-                    <div class="contact-m-glass p-8 rounded-3xl">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-10 h-10 rounded-full bg-sky-500/10 flex items-center justify-center text-sky-400">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <h4 class="font-bold uppercase tracking-widest text-sm">Call Center</h4>
-                        </div>
-                        <p class="text-slate-400">+44 (0) 20 3206 5200</p>
-                        <p class="text-sky-400 font-medium">Available 24/7 for partners</p>
-                    </div>
-
-                    <div class="contact-m-glass p-8 rounded-3xl border-l-4 border-l-sky-500">
-                        <h4 class="font-bold mb-2">Digital Enabler</h4>
-                        <p class="text-sm text-slate-500 italic">"Leveraging complex data for a sustainable, resilient future."</p>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3">
-                    <form class="contact-m-glass p-10 md:p-12 rounded-[2.5rem] space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="flex flex-col">
-                                <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Identity</label>
-                               
-                                 <input name="name" type="text" placeholder="Name" class="contact-m-input px-5 py-4 rounded-xl" required>
-      
-                            </div>
-                            <div class="flex flex-col">
-                                <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Correspondence</label>
-                                  <input name="email" type="email" placeholder="Email" class="contact-m-input px-5 py-4 rounded-xl" required>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Industry Sector</label>
-                            <select class="contact-m-input px-5 py-4 rounded-xl appearance-none cursor-pointer">
-                                <option>Energy & Low Carbon</option>
-                                <option>Tech & Media</option>
-                                <option>Manufacturing</option>
-                                <option>Mining & Minerals</option>
-                            </select>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <label class="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2 ml-1">Message Brief</label>
-                            <textarea rows="4" placeholder="How can we assist your sustainability goals?" class="contact-m-input px-5 py-4 rounded-xl resize-none"></textarea>
-                        </div>
-
-                        <button type="submit" class="contact-m-btn w-full py-5 rounded-xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3">
-                            Execute Inquiry
-                            <i class="fa-solid fa-arrow-right-long text-xs"></i>
-                        </button>
-                    </form>
-                </div>
-
+            <div class="service-card">
+                <i data-lucide="wrench" size="48"></i>
+                <h3>On-Site Repair</h3>
+                <p>24/7 emergency repair and maintenance for hydraulic systems.</p>
+            </div>
+            <div class="service-card">
+                <i data-lucide="shield-check" size="48"></i>
+                <h3>Quality Testing</h3>
+                <p>Pressure testing and certification for all motion control components.</p>
+            </div>
+             <div class="service-card">
+                <i data-lucide="settings-2" size="48"></i>
+                <h3>Custom Assembly</h3>
+                <p>Tailored hose assemblies and manifold kits designed to your exact specs.</p>
             </div>
         </div>
-    </div>
-<div class="contact-map" style="margin: 0px 100px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.9354508739525!2d86.20023277509729!3d22.804855579326908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e30efc7ad679%3A0xaace7ddf46236d11!2sSakchi%20Gol%20Chakkar%2C%20SNP%20Area%2C%20Sakchi%2C%20Jamshedpur%2C%20Jharkhand%20831001!5e0!3m2!1sen!2sin!4v1776786463828!5m2!1sen!2sin" width="100%" height="300" style="border: 1px;;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-   
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">Our Featured Products</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('hydraulics')">Hydraulics</button>
+            <button class="filter-btn" onclick="filterProducts('pneumatics')">Pneumatics</button>
+            <button class="filter-btn" onclick="filterProducts('filtration')">Filtration</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="hydraulics">
+                <div class="product-img">Piston Pump Series</div>
+                <div class="product-info">
+                    <span class="product-cat">Hydraulics</span>
+                    <h3>PVPlus Axial Piston Pump</h3>
+                    <p>High pressure, low noise industrial pump solutions.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+              <div class="product-card" data-category="hydraulics">
+                <div class="product-img">Piston Pump Series</div>
+                <div class="product-info">
+                    <span class="product-cat">Hydraulics</span>
+                    <h3>PVPlus Axial Piston Pump</h3>
+                    <p>High pressure, low noise industrial pump solutions.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+             <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
 
 
+             <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+             <div class="product-card" data-category="pneumatics">
+                <div class="product-img">Air Cylinders</div>
+                <div class="product-info">
+                    <span class="product-cat">Pneumatics</span>
+                    <h3>P1D Series ISO Cylinder</h3>
+                    <p>Next-generation pneumatic cylinders for automation.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-category="filtration">
+                <div class="product-img">Fuel Filter</div>
+                <div class="product-info">
+                    <span class="product-cat">Filtration</span>
+                    <h3>Racor Fuel Filter Water Separator</h3>
+                    <p>Maximum engine protection from water and debris.</p>
+                    <br>
+                    <a href="#" class="btn-quote">Request Specs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Product Filter Logic
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update Active Button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && btn.innerText === 'All Products')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Filter Cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    
 <!-- footer -->
 
     <footer class="aurora-footer mb-0">
@@ -640,6 +744,8 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
         }
     }
 </style>
+
+
 
 </body>
 </html>

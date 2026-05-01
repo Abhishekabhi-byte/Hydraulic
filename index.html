@@ -258,18 +258,18 @@
 
 
       
-           <li class="nav-item"><a href="products.html">Products</a></li>
+  <li class="nav-item"><a href="products.html">Products</a></li>
 
   
         <li class="nav-item has-dropdown">
-            <a href="services.html">Services</a>
+            <a href="">Services</a>
             <span class="dropdown-arrow">⏷</span>
 
             <ul class="dropdown">
-                <li><a href="#">Services1</a></li>
-                <li><a href="#">Services2</a></li>
-                 <li><a href="#">Services3</a></li>
-                <li><a href="#">Services4</a></li>
+                <li><a href="service-parker-dist.html">Parker Distributor</a></li>
+                <li><a href="service-reconditioning-hydrolic.html">Reconditioning <br>Hydrolic</a></li>
+                 <li><a href="service-hydrolic-system.html">Hydrolic System</a></li>
+                <li><a href="service-eggnament.html">Eggnament </a></li>
             </ul>
         </li>
 
@@ -322,7 +322,6 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
 });
 </script>
 </div>
-
   <!-- header end -->
 
 <!-- top slider -->
@@ -1375,7 +1374,174 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<!-- parker-section-start -->
+<style>
+    /* SECTION */
+.about-parkr-section {
+    padding: 60px 20px;
+    background: #f5f7fa;
+}
 
+/* WRAPPER */
+.about-parkr-wrapper {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* IMAGE CARD */
+.about-parkr-image-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.about-parkr-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTENT CARD */
+.about-parkr-content-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* TEXT */
+.about-parkr-badge {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.about-parkr-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about-parkr-text {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* LIST */
+.about-parkr-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.about-parkr-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* BUTTON */
+.about-parkr-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.about-parkr-btn:hover {
+    background: #0056b3;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .about-parkr-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .about-parkr-content-card {
+        padding: 25px;
+    }
+
+    .about-parkr-title {
+        font-size: 22px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .about-parkr-section {
+        padding: 40px 10px;
+    }
+
+    .about-parkr-content-card {
+        padding: 20px;
+    }
+
+    .about-parkr-title {
+        font-size: 18px;
+    }
+
+    .about-parkr-text {
+        font-size: 13px;
+    }
+
+    .about-parkr-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+</style>
+
+
+<section class="about-parkr-section">
+
+  <div class="about-parkr-wrapper">
+
+    <!-- IMAGE CARD -->
+    <div class="about-parkr-image-card">
+      <img src="https://www.parker.com/content/dam/parker/na/united-states/industries/industrial-manufacturing/Metals-Overview-sm.jpg?im=Resize=(1440,810)" alt="Parker Hydraulic">
+    </div>
+
+    <!-- CONTENT CARD -->
+    <div class="about-parkr-content-card">
+      <span class="about-parkr-badge">Parker Hydraulics</span>
+
+      <h2 class="about-parkr-title">
+        Reliable Hydraulic Solutions for Industry
+      </h2>
+
+      <p class="about-parkr-text">
+        We are a trusted distributor of Parker hydraulic products, offering complete solutions including system assembly, reconditioning, fabrication, and maintenance services.
+      </p>
+
+      <ul class="about-parkr-list">
+        <li>✔ Hydraulic System Assembly & BOM</li>
+        <li>✔ Reconditioning of Components</li>
+        <li>✔ Hose & Pipe Fabrication</li>
+        <li>✔ AMC & Engineering Services</li>
+      </ul>
+
+      <a href="service-parker-dist.html" class="about-parkr-btn">Explore Services</a>
+    </div>
+
+  </div>
+
+</section>
+<!-- parker-section end-->
 
 <!-- why-choose-us -->
 
@@ -2179,12 +2345,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="footer-col">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href=" ">Home</a></li>
-                <li><a href=" ">About us</a></li>
-                <li><a href=" ">Products</a></li>
-                <li><a href=" ">Services</a></li>              
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="service-parker-dist.html">Services</a></li>              
                 <li><a href=" ">Blogs</a></li>
-                <li><a href=" ">Contact us</a></li>
+                <li><a href="contact-us.html">Contact us</a></li>
             </ul>
         </div>
 
@@ -2192,14 +2358,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="footer-col">
             <h4>Services</h4>
             <ul>
-                <li><a href=" ">Services</a></li>
-                <li><a href=" ">Services2</a></li>
-                <li><a href=" ">Services3</a></li>
-                <li><a href=" ">Services4</a></li>
-                <li><a href=" ">Services5</a></li>
-                <li><a href=" "> Services7</a> </li>
-                <li><a href=" ">Services8</a></li>
-                <li><a href=" ">Services9</a></li>
+                 <li><a href="service-parker-dist.html">Parker Distributor</a></li>
+                <li><a href="service-reconditioning-hydrolic.html">Reconditioning <br>Hydrolic</a></li>
+                 <li><a href="service-hydrolic-system.html">Hydrolic System</a></li>
+                <li><a href="service-eggnament.html">Eggnament</a></li>
             </ul>
         </div>
 
@@ -2208,13 +2370,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <h4>Explore Our Products</h4>
             <ul>
                 <li><a href=" ">product</a></li>
-                <li><a href="">product2</a>
-                </li>
-                <li><a href=" ">product3</a></li>
-                <li><a href=" ">product4</a></li>
-                <li><a href=" ">product5</a></li>
-                <li><a href=" ">product6</a>
-                </li>
+                <li><a href="">product2</a></li>
+                <li><a href=" ">product3</a></li>               
                 <li><a href=" ">Explore Other Products</a></li>
             </ul>
         </div>
@@ -2232,7 +2389,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="footer-bottom">
         <hr />
-        <p>© Abhi Marketing, All Right Reserved</p>
+        <p>© Resilient, All Right Reserved</p>
     </div>
 </footer>
 
@@ -2256,7 +2413,6 @@ document.addEventListener("DOMContentLoaded", function () {
         grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
         gap: 30px;
     }
-
 
     .footer-logo {
         width: 180px;
@@ -2352,5 +2508,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 </style>
+
 </body>
 </html>
