@@ -821,23 +821,22 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
         <div class="about-badge">About us</div>
 
         <h2 class="about-heading">
-            Building Enduring Value<br>for Our Maritime Partners
+           Resilient delivering, efficient <br> solutions with innovation, quality.
         </h2>
 
         <p class="about-text">
-            We deliver ocean solutions using deep maritime expertise and advanced coating technologies,
-            ensuring efficiency, safety, and long-term partnerships.
-            We deliver ocean solutions using deep maritime expertise and advanced coating technologies,
-             ensuring efficiency, safety, and long-term partnerships.
+           Resilient Manufacturing is a forward-thinking company focused on delivering durable, high-quality industrial solutions. 
+           With strong engineering expertise and adaptive processes, it ensures efficiency 
+           even in changing market conditions. The company emphasizes innovation, reliability, and long-term performance.
         </p>
 
         <div class="about-feature-box">
             <h3>Our Key Features</h3>
             <ul>
-                <li>All-in-one marine services</li>
-                <li>Expert coating protection</li>
-                <li>Fast & reliable support</li>
-                <li>Global maritime expertise</li>
+                <li>All-in-one industrial solutions</li>
+                <li>Advanced precision engineering</li>
+                <li>Reliable manufacturing systems</li>
+                <li>End-to-end production services</li>
             </ul>
         </div>
 
@@ -951,7 +950,7 @@ io.observe(rightImage);
 
     <div class="aurora-service-header">
         <div class="aurora-service-badge">Our Services</div>
-        <h2 class="aurora-service-heading">Canvas of Basic Marine, Logistics &amp; Coating Services<br>Under One Roof
+        <h2 class="aurora-service-heading">End-to-end manufacturing: design, engineering,  <br> production, and quality control
         </h2>
     </div>
 
@@ -1534,8 +1533,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 
 
-
- <style>
+<style>
     .products-section {
     padding: 40px 20px;
     text-align: center;
@@ -1555,14 +1553,34 @@ document.addEventListener("DOMContentLoaded", function () {
     transition: transform 0.5s ease;
 }
 
-/* CARD */
+/* ✅ Responsive card width */
 .product-card {
-    min-width: 250px;
-    max-width: 250px;
+    flex: 0 0 calc(25% - 20px); /* Desktop: 4 cards */
     background: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .product-card {
+        flex: 0 0 calc(33.33% - 20px); /* 3 cards */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 0 0 calc(50% - 20px); /* 2 cards */
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .product-card {
+        flex: 0 0 100%; /* 1 card */
+    }
 }
 
 .product-card img {
@@ -1572,7 +1590,7 @@ document.addEventListener("DOMContentLoaded", function () {
     border-radius: 8px;
 }
 
-/* BUTTONS */
+/* Buttons */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -1588,11 +1606,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 .prev { left: 10px; }
 .next { right: 10px; }
-
-.prev:hover, .next:hover {
-    background: #0056b3;
-}
- </style>
+</style>
 
 <section class="products-section">
     <h2><span style="color: black;">Our</span> PRODUCTS</h2>
@@ -1672,43 +1686,63 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 
 <script>
-const track = document.getElementById("sliderTrack");
+    const track = document.getElementById("sliderTrack");
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 
 let index = 0;
-const cardWidth = 270; // 250 + gap
+
+function getVisibleCards() {
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 768) return 2;
+    if (window.innerWidth <= 1024) return 3;
+    return 4;
+}
+
+function getCardWidth() {
+    const card = document.querySelector(".product-card");
+    return card.offsetWidth + 20; // width + gap
+}
 
 function updateSlider() {
+    const cardWidth = getCardWidth();
     track.style.transform = `translateX(-${index * cardWidth}px)`;
 }
 
 nextBtn.addEventListener("click", () => {
+    const visible = getVisibleCards();
+    const maxIndex = track.children.length - visible;
+
     index++;
-    if (index > track.children.length - 3) {
-        index = 0;
-    }
+    if (index > maxIndex) index = 0;
+
     updateSlider();
 });
 
 prevBtn.addEventListener("click", () => {
+    const visible = getVisibleCards();
+    const maxIndex = track.children.length - visible;
+
     index--;
-    if (index < 0) {
-        index = track.children.length - 3;
-    }
+    if (index < 0) index = maxIndex;
+
     updateSlider();
 });
 
-// AUTO SLIDE
+// Auto slide
 setInterval(() => {
+    const visible = getVisibleCards();
+    const maxIndex = track.children.length - visible;
+
     index++;
-    if (index > track.children.length - 3) {
-        index = 0;
-    }
+    if (index > maxIndex) index = 0;
+
     updateSlider();
 }, 3000);
-</script>
 
+// Fix on resize
+window.addEventListener("resize", updateSlider);
+</script>
 
 
 
@@ -1911,7 +1945,7 @@ function toggleFAQ(card) {
 }
   </style>
 <section class="aurora-logo-slider">
-    <h2>Our<span style="color: #061026;"> Partners</span></h2>
+    <h2>Our<span style="color: #061026;"> Brands</span></h2>
     <div class="aurora-logo-track">
         <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 1"></div>
         <div class="aurora-logo-slide"><img src="hydraulic-logo.jpeg" alt="Brand 2"></div>
@@ -2105,7 +2139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- RIGHT: MAP -->
     <div class="contact-right">
 
-      <h2>Get In Touch!</h2>
+      <h2>Our Location!</h2>
 
       <p>
         We respond quickly, work transparently, and focus on long-term
