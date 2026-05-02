@@ -376,14 +376,21 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .product-img {
-            width: 100%;
-            height: 200px;
-            background: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    background: #e0d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-img img{
+    width: 100%;
+    height: 100%;
+}
 
         .product-info { padding: 20px; }
         .product-cat { font-size: 0.8rem; color: #888; text-transform: uppercase; }
@@ -402,8 +409,7 @@ document.querySelectorAll(".has-dropdown > a").forEach(link => {
        
     </style>
 
-</head>
-<body>
+
 
  
     <header class="hero">
@@ -455,7 +461,8 @@ provide continuous support, minimizing downtime and maximizing performance. </p>
         <div class="product-grid" id="productGrid">
             <!-- Product 1 -->
             <div class="product-card" data-category="hydraulics">
-                <div class="product-img">Piston Pump Series</div>
+                
+                <div class="product-img"><img src="https://th.bing.com/th/id/OIP.TDh31G81LH7ZGSCyMfRRSQHaG4?w=194&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="img"></div>
                 <div class="product-info">
                     <span class="product-cat">Hydraulics</span>
                     <h3>PVPlus Axial Piston Pump</h3>
